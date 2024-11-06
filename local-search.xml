@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>测试文章</title>
+    <link href="/2024/11/06/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <url>/2024/11/06/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<p>这是一篇测试文章</p><p><img src="/2024/11/06/hello-world/g"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Welcome！</title>
+    <link href="/2024/11/06/hello-world/"/>
+    <url>/2024/11/06/hello-world/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Welcome-to-hicancan’s-page-nice-to-meet-you"><a href="#Welcome-to-hicancan’s-page-nice-to-meet-you" class="headerlink" title="Welcome to hicancan’s page, nice to meet you!"></a>Welcome to hicancan’s page, nice to meet you!</h2>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>

@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="hicancan">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="hicancan的算法笔记0x0101 洛谷P1226【模板】快速幂  题目描述给你三个整数 $a,b,p$，求 $a^b \bmod p$。 输入格式输入只有一行三个整数，分别代表 $a,b,p$。 输出格式输出一行一个字符串 a^b mod p&#x3D;s，其中 $a,b,p$ 分别为题目给定的值， $s$ 为运算结果。 样例样例输入12 10 9  样例输出12^10 mod 9&#x3D;7  提示样例解释">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hicancan的算法笔记0x0101">
+<meta property="og:url" content="http://example.com/2024/11/07/0x0101/index.html">
+<meta property="og:site_name" content="hicancan">
+<meta property="og:description" content="hicancan的算法笔记0x0101 洛谷P1226【模板】快速幂  题目描述给你三个整数 $a,b,p$，求 $a^b \bmod p$。 输入格式输入只有一行三个整数，分别代表 $a,b,p$。 输出格式输出一行一个字符串 a^b mod p&#x3D;s，其中 $a,b,p$ 分别为题目给定的值， $s$ 为运算结果。 样例样例输入12 10 9  样例输出12^10 mod 9&#x3D;7  提示样例解释">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411062311861.jpeg">
+<meta property="article:published_time" content="2024-11-07T12:11:37.000Z">
+<meta property="article:modified_time" content="2024-11-07T02:49:32.809Z">
+<meta property="article:author" content="hicancan">
+<meta property="article:tag" content="原创">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411062311861.jpeg">
+  
+  
+  
+  <title>hicancan的算法笔记0x0101 - hicancan</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>hicancan</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>联系我</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://gcore.jsdelivr.net/gh/hicancan/piclist/202411062311861.jpeg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="hicancan的算法笔记0x0101"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-07 20:11" pubdate>
+          2024年11月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          34 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">hicancan的算法笔记0x0101</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="hicancan的算法笔记0x0101"><a href="#hicancan的算法笔记0x0101" class="headerlink" title="hicancan的算法笔记0x0101"></a><strong>hicancan的算法笔记0x0101</strong></h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1226">洛谷P1226【模板】快速幂</a></p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你三个整数 $a,b,p$，求 $a^b \bmod p$。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入只有一行三个整数，分别代表 $a,b,p$。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个字符串 <code>a^b mod p=s</code>，其中 $a,b,p$ 分别为题目给定的值， $s$ 为运算结果。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">2</span> <span class="hljs-number">10</span> <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">2</span>^<span class="hljs-number">10</span> mod <span class="hljs-number">9</span>=<span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p><strong>样例解释</strong>：</p>
+<p>$2^{10} &#x3D; 1024$，$1024 \bmod 9 &#x3D; 7$。</p>
+<p><strong>数据规模与约定</strong>：</p>
+<p>对于 $100%$ 的数据，保证 $0\le a,b &lt; 2^{31}$，$a+b&gt;0$，$2 \leq p \lt 2^{31}$。</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><h3 id="思路一：直接计算"><a href="#思路一：直接计算" class="headerlink" title="思路一：直接计算"></a>思路一：直接计算</h3><p>直接计算 $a^b \bmod p$，然后输出结果。<br>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b; i++)<span class="hljs-comment">//一个一个乘</span><br>        result = (result * a) % p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; result &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032316711.png" srcset="/img/loading.gif" lazyload alt="202411032316711.png"><br>最后三个测试点TLE了</p>
+<p>分析原因：</p>
+<p>一个一个乘以a，时间复杂度为：$O(b)$，当b很大的时候，时间复杂度会很大，因此我们需要优化。</p>
+<p>没有利用到中间结果，比如如果算到了$a^{100}$,完全可以自乘平方，直接得到$a^{200}$。</p>
+<p>从下至上的想的话，从头开始就自乘：也就是知道了a，就能知道$a^{2}$、$a^{4}$、$a^{8}$、$a^{16}$，最终知道：$a^{2^n}$</p>
+<p>但是：很遗憾$2^{n}$不一定等于$b$，所以我们需要找到最接近$b$的$2^{n}$，也就是$2^{\left[log2(b)\right]}$，然后剩下的指数$(b-2^{\left[log2(b)\right]})$一个一个乘。<br>由此产生了思路二：</p>
+<h3 id="思路二：自乘平方递归"><a href="#思路二：自乘平方递归" class="headerlink" title="思路二：自乘平方递归"></a>思路二：自乘平方递归</h3><h4 id="自乘平方并用-2-left-log2-b-right-找到不超过b的最大2的幂次的指数"><a href="#自乘平方并用-2-left-log2-b-right-找到不超过b的最大2的幂次的指数" class="headerlink" title="自乘平方并用$2^{\left[log2(b)\right]}$找到不超过b的最大2的幂次的指数"></a>自乘平方并用$2^{\left[log2(b)\right]}$找到不超过b的最大2的幂次的指数</h4><p>代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = a;<br>    <span class="hljs-type">int</span> mindex = <span class="hljs-built_in">floor</span>(<span class="hljs-built_in">log2</span>(b)); <span class="hljs-comment">// 求出不大于b的最大2次幂：mindex</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> index = <span class="hljs-number">1</span>; index &lt;= mindex; index++) <span class="hljs-comment">// 自乘平方直至指数到2的mindex次方</span><br>        result = (result * result) % p;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b - (<span class="hljs-number">1</span> &lt;&lt; mindex); i++) <span class="hljs-comment">// 剩下的指数一个一个乘</span><br>        result = (result * a) % p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; result &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：</p>
+<p><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032316085.png" srcset="/img/loading.gif" lazyload alt="202411032316085.png"></p>
+<p>仍然有俩个测试点TLE了</p>
+<p>分析原因：<br>剩下的指数还是一个一个乘，而剩下的指数个数为：$$2^{\left[log2(b)\right]}$$<br>如果b比较大，那么比b小的2的最大幂次与b差距的可能的差距的最大值就会越来越大，因此我们利用递归的思想，将剩下的指数作为新的b再进行自乘平方，递归求解。</p>
+<h4 id="优化：递归剩下的指数"><a href="#优化：递归剩下的指数" class="headerlink" title="优化：递归剩下的指数"></a>优化：递归剩下的指数</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">// 自乘递归求幂</span><br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<span class="hljs-comment">//递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = a;<br>    <span class="hljs-type">int</span> mindex = <span class="hljs-built_in">floor</span>(<span class="hljs-built_in">log2</span>(b));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> index = <span class="hljs-number">1</span>; index &lt;= mindex; index++)<br>        result = (result * result) % p;<br>    b = b - (<span class="hljs-number">1</span> &lt;&lt; mindex);<span class="hljs-comment">//更新b，准备递归</span><br>    <span class="hljs-keyword">return</span> (result * <span class="hljs-built_in">quickpow</span>(a, b, p)) % p;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032317333.png" srcset="/img/loading.gif" lazyload alt="202411032317333.png"><br>成功AC了！<br>不过用了$log_{2}()$函数，可能还能对$log_{2}()$函数进行改变，比如使用位运算去计算不超过b的最大2的幂次，也就是找到b的二进制最高位。</p>
+<h4 id="尝试：位运算找b二进制最高位-替代cmath库中log2函数"><a href="#尝试：位运算找b二进制最高位-替代cmath库中log2函数" class="headerlink" title="尝试：位运算找b二进制最高位,替代cmath库中log2函数"></a>尝试：位运算找b二进制最高位,替代cmath库中log2函数</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">// 自乘递归求幂</span><br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// 递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = a;<br>    <span class="hljs-type">int</span> mindex = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> ((b &gt;&gt; mindex) != <span class="hljs-number">1</span>)<br>        mindex++; <span class="hljs-comment">// 逐步右移直到等于1</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> index = <span class="hljs-number">1</span>; index &lt;= mindex; index++)<br>        result = (result * result) % p;<br>    b = b - (<span class="hljs-number">1</span> &lt;&lt; mindex); <span class="hljs-comment">// 更新b，准备递归</span><br>    <span class="hljs-keyword">return</span> (result * <span class="hljs-built_in">quickpow</span>(a, b, p)) % p;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032317766.png" srcset="/img/loading.gif" lazyload alt="202411032317766.png"></p>
+<h4 id="突发奇想：从找-2-left-log2-b-right-，转换成不大于b的最大2的幂次呢？"><a href="#突发奇想：从找-2-left-log2-b-right-，转换成不大于b的最大2的幂次呢？" class="headerlink" title="突发奇想：从找$2^{\left[log2(b)\right]}$，转换成不大于b的最大2的幂次呢？"></a>突发奇想：从找$2^{\left[log2(b)\right]}$，转换成不大于b的最大2的幂次呢？</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">// 求不大于b的最大2的幂次的快速算法(按位或运算快速1的扩散)</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxpowerof2</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>                         <span class="hljs-comment">// 0010 1100 0000 0000 0000 0000 0000 0000 0000 0001</span><br>    x = x | (x &gt;&gt; <span class="hljs-number">1</span>);    <span class="hljs-comment">// 0011 1110 0000 0000 0000 0000 0000 0000 0000 0000</span><br>    x = x | (x &gt;&gt; <span class="hljs-number">2</span>);    <span class="hljs-comment">// 0011 1111 1000 0000 0000 0000 0000 0000 0000 0000</span><br>    x = x | (x &gt;&gt; <span class="hljs-number">4</span>);    <span class="hljs-comment">// 0011 1111 1111 1000 0000 0000 0000 0000 0000 0000</span><br>    x = x | (x &gt;&gt; <span class="hljs-number">8</span>);    <span class="hljs-comment">// 0011 1111 1111 1111 1111 1000 0000 0000 0000 0000</span><br>    x = x | (x &gt;&gt; <span class="hljs-number">16</span>);   <span class="hljs-comment">// 0011 1111 1111 1111 1111 1111 1111 1111 1111 1111</span><br>    x = x | (x &gt;&gt; <span class="hljs-number">32</span>);   <span class="hljs-comment">// 0011 1111 1111 1111 1111 1111 1111 1111 1111 1111</span><br>    <span class="hljs-keyword">return</span> (x + <span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>; <span class="hljs-comment">// 0100 0000 0000 0000 0000 0000 0000 0000 0000 0000</span><br>                         <span class="hljs-comment">// 0010 0000 0000 0000 0000 0000 0000 0000 0000 0000</span><br>&#125;<br><span class="hljs-comment">// 自乘递归求幂</span><br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// 递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = a, btemp = b;<br>    <span class="hljs-type">int</span> mindex = <span class="hljs-built_in">maxpowerof2</span>(btemp);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> index = <span class="hljs-number">2</span>; index &lt;= mindex; index &lt;&lt;= <span class="hljs-number">1</span>)<br>        result = (result * result) % p;<br>    b = b - mindex; <span class="hljs-comment">// 更新b，准备递归</span><br>    <span class="hljs-keyword">return</span> (result * <span class="hljs-built_in">quickpow</span>(a, b, p)) % p;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032318330.png" srcset="/img/loading.gif" lazyload alt="202411032318330.png"><br>结果居然有一道题TLE了，说明存在不够快的问题，不过这个算法的思想还是值得学习的，比如利用按位或运算进行1的扩散快速求不大于b的最大2的幂次。<br>不够快的原因是什么呢？试验：将quickpow部分改成如下代码测试：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// 递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = a, btemp = b;<br>    <span class="hljs-type">int</span> mindex = <span class="hljs-built_in">log2</span>(<span class="hljs-built_in">maxpowerof2</span>(btemp));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> index = <span class="hljs-number">1</span>; index &lt;= mindex; index++)<br>        result = (result * result) % p;<br>    b = b - (<span class="hljs-number">1</span> &lt;&lt; mindex); <span class="hljs-comment">// 更新b，准备递归</span><br>    <span class="hljs-keyword">return</span> (result * <span class="hljs-built_in">quickpow</span>(a, b, p)) % p;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032318720.png" srcset="/img/loading.gif" lazyload alt="202411032318720.png"><br>居然都AC了，说明不是maxpowerof2的算法不够快，而是每次<code>index &lt;&lt;= 1</code>相比于<code>index++</code>慢，多次循环后导致超时。</p>
+<h4 id="思路二小结"><a href="#思路二小结" class="headerlink" title="思路二小结"></a>思路二小结</h4><p>重新观察思路二发现主要的算法优化集中于剩下的$b-2^{\left[log2(b)\right]}$个的指数上，然后还发现算法的优化与二进制以及位运算息息相关，于是思考能否不让指数剩下，也就是把指数b用$a$、$a^{2}$、$a^{4}$、$a^{8}$、$a^{16}$，……，$a^{2^n}$ 充分的表示出来，而每一个都可以选或者不选对应着 $a^{1\times 2^n}$ 或者 $a^{0\times 2^n}&#x3D;1$(1在乘积中能维持式子值不变对应着不选该项)，那么如何把b用这2种项表示出来呢？思路三呼之欲出。</p>
+<h3 id="思路三：二进制表示指数b，以拆分-a-b-为-a-0或1-times-2-n-的乘积"><a href="#思路三：二进制表示指数b，以拆分-a-b-为-a-0或1-times-2-n-的乘积" class="headerlink" title="思路三：二进制表示指数b，以拆分$a^{b}$为$a^{(0或1)\times{2^n}}$的乘积"></a>思路三：二进制表示指数b，以拆分$a^{b}$为$a^{(0或1)\times{2^n}}$的乘积</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)<br>            result = (result * a) % p; <span class="hljs-comment">// 如果b的当前位为1，则乘上a</span><br>        a = (a * a) % p; <span class="hljs-comment">// a自乘，更换乘积因子</span><br>        b &gt;&gt;= <span class="hljs-number">1</span>; <span class="hljs-comment">// b右移一位，准备下一次判断 b &amp; 1</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032318949.png" srcset="/img/loading.gif" lazyload alt="202411032318949.png"><br>成功AC!不禁感叹，没有递归处理剩余的$b-2^{\left[log2(b) \right]}$个指数的思路是多么的巧妙！究其原因是进制的唯一性，能够恰巧的将b精准的表示成$a^{1\times 2^n}$ 或者 $a^{0\times 2^n}&#x3D;1$的乘积，从而避免了递归处理剩余的$b-2^{\left[log2(b) \right]}$个指数。</p>
+<p>从大思路来讲，我们从自下而上的乘的观念转变成了将b如何表示成这些乘的自上而下的视角，那么如果我们一开始没有一眼看到这种二进制的表示方法，那么我们将如何把b拆分呢？正过来是自乘平方，倒过来就是开方，换句话说是指数除以2，于是思路四呼之欲出。</p>
+<h3 id="思路四：指数除以2，2分递归"><a href="#思路四：指数除以2，2分递归" class="headerlink" title="思路四：指数除以2，2分递归"></a>思路四：指数除以2，2分递归</h3><p>如果b为偶数，$a^{b}&#x3D;a^{b&#x2F;2}\times a^{b&#x2F;2}$，如果b为奇数，则再乘一个a，递归处理$a^{b&#x2F;2}$，直到$b&#x3D;0$，返回1，结束递归。当然也可以写成奇偶统一的形式：$a^{b}&#x3D;a^{b&#x2F;2}\times a^{b&#x2F;2}\times a^{b%2}$。代码实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// 递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-built_in">quickpow</span>(a, b / <span class="hljs-number">2</span>, p); <span class="hljs-comment">// 递归处理指数b/2</span><br>    result = (result * result) % p; <span class="hljs-comment">// 指数为偶数</span><br>    <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) <span class="hljs-comment">//位运算判断b是否为奇数</span><br>        result = (result * a) % p; <span class="hljs-comment">// 指数为奇数，再乘一个a</span><br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032318894.png" srcset="/img/loading.gif" lazyload alt="202411032318894.png"><br>成功AC!看来自上而下的想法，即指数除以2，也是可行的，而且代码实现起来也很简单，不过这种思路的缺点是递归的深度太深：本质原因是未能一眼看出b如何充分乘积表示，而是用递归只看了一步二分表示，从而导致递归深度太深。那就多分一点，减少递归深度，于是思路五呼之欲出。</p>
+<h3 id="思路五：2分可以递归，3分4分呢？"><a href="#思路五：2分可以递归，3分4分呢？" class="headerlink" title="思路五：2分可以递归，3分4分呢？"></a>思路五：2分可以递归，3分4分呢？</h3><p>既然2分可以递归，那么3分也可以递归，甚至n分也可以递归，然后递归处理$a^{b&#x2F;n}$，直到$b&#x3D;0$，返回1，结束递归。代码实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<span class="hljs-comment">// 递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-built_in">quickpow</span>(a, b / <span class="hljs-number">3</span>, p); <span class="hljs-comment">// 递归处理指数b/3</span><br>    result = ((result * result) % p * result) % p;<br>    <span class="hljs-keyword">if</span> (b % <span class="hljs-number">3</span> == <span class="hljs-number">1</span>)<br>        result = (result * a) % p;<br>    <span class="hljs-keyword">if</span> (b % <span class="hljs-number">3</span> == <span class="hljs-number">2</span>)<br>        result = ((result * a) % p * a) % p;<span class="hljs-comment">//小心每乘一次都要取模不然会wa</span><br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032318305.png" srcset="/img/loading.gif" lazyload alt="202411032318305.png"><br>发现，三分比二分还快！原因就在于，三分的递归深度比二分浅，但是每次递归的计算量比二分多，在这两个方面的博弈下，三分比二分快一点点。当然，如果分更多，比如四分，那么递归深度会更浅，但是每次递归的计算量也会更多，所以分多少，我们还需要分析。<br>类似的四分的结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032318643.png" srcset="/img/loading.gif" lazyload alt="202411032318643.png"><br>都AC了，而且比三分还快！说明在n分的n比较小的情况下，n越大，递归深度变浅的影响大于每次递归计算量变多的影响。</p>
+<h3 id="思路六：n分呢？对n进行试验"><a href="#思路六：n分呢？对n进行试验" class="headerlink" title="思路六：n分呢？对n进行试验"></a>思路六：n分呢？对n进行试验</h3><p>写成n分的代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n = <span class="hljs-number">5</span>;<br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<span class="hljs-comment">// 递归出口:指数为0，返回1</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> temp = <span class="hljs-built_in">quickpow</span>(a, b / n, p); <span class="hljs-comment">// 递归处理指数b/n</span><br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        result = (result * temp) % p;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b % n; i++)<br>        result = (result * a) % p; <span class="hljs-comment">// 处理指数b%n</span><br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br>n&#x3D;5<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032319982.png" srcset="/img/loading.gif" lazyload alt="202411032319982.png"><br>n&#x3D;10<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032319810.png" srcset="/img/loading.gif" lazyload alt="202411032319810.png"><br>n&#x3D;50<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032319978.png" srcset="/img/loading.gif" lazyload alt="202411032319978.png"><br>n&#x3D;100<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032320704.png" srcset="/img/loading.gif" lazyload alt="202411032320704.png"><br>n&#x3D;500<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032321786.png" srcset="/img/loading.gif" lazyload alt="202411032321786.png"><br>我们可以看到100分的表现还不错，但到500分的时候表现就不是很好了，说明分太多，递归深度变浅，但是每次递归计算量变多的影响也变大，导致整体效率下降。所以，分多少的最佳值n能不能提前预判呢？答案是肯定的，我们可以通过计算递归深度和每次递归计算量来预判n的最佳值。</p>
+<h4 id="n分递归的理论分析：最佳值n的提前预判计算"><a href="#n分递归的理论分析：最佳值n的提前预判计算" class="headerlink" title="n分递归的理论分析：最佳值n的提前预判计算"></a>n分递归的理论分析：最佳值n的提前预判计算</h4><p>递归深度：$floor(log_n(b))$</p>
+<p>每次递归计算量：$n$</p>
+<p>总的时间复杂度：$O(n\cdot log_n(b))$<br>即$b\cdot\frac {n}{ln(n)}$</p>
+<p>因此希望时间复杂度最小，也就是求$\frac {n}{ln(n)}$的最小值</p>
+<p>因此求导得$\frac {ln(n)-1}{ln^2(n)}$，令其为0，解得n&#x3D;e，即n&#x3D;2.718281828459045，取整为3，所以n的最佳理论值为3。从上面的测试结果来看，n&#x3D;3时，效率确实相对较高。因此打破对2分的固有认知，事实上3分、4分效率比二分更高。</p>
+<p>而因为联想到2分对应着二进制，3分对应着三进制，4分对应着四进制，所以n分对应着n进制，因此，我们可以将快速幂的指数进制表示算法扩展到任意进制的快速幂算法，即任意进制快速幂算法。</p>
+<p>而且我们大胆推测，3进制的快速幂算法，应该比2进制更快，不妨试试。</p>
+<h3 id="思路七：3进制快速幂，看看是否比2进制快"><a href="#思路七：3进制快速幂，看看是否比2进制快" class="headerlink" title="思路七：3进制快速幂，看看是否比2进制快"></a>思路七：3进制快速幂，看看是否比2进制快</h3><p>任意进制快速幂算法的思路是，将指数b转换为n进制表示，然后从低位到高位，依次处理指数的每一位，计算$a^{b_i\cdot n^{i-1}}$，然后将这些结果相乘，得到$a^b$。如果n&#x3D;3，代码实现如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (b % <span class="hljs-number">3</span> == <span class="hljs-number">1</span>) <span class="hljs-comment">// 检查b的当前位（三进制下的个位）</span><br>            result = (result * a) % p;<br>        <span class="hljs-keyword">if</span> (b % <span class="hljs-number">3</span> == <span class="hljs-number">2</span>)<br>            result = ((result * a) % p * a % p) % p;<br>        a = ((a * a) % p * a) % p; <span class="hljs-comment">// a=a*a*a，更换乘积因子</span><br>        b /= <span class="hljs-number">3</span>;                    <span class="hljs-comment">// b除以3，准备下一次判断 b % 3</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试点结果<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032321718.png" srcset="/img/loading.gif" lazyload alt="202411032321718.png"></p>
+<p>成功的AC，而且和三分的效率相当，并且都比2进制或者二分快。这也正好符合我们刚刚的n分递归最佳n的理论分析。</p>
+<h3 id="思路八：n进制快速幂呢？不妨对n进行实验！"><a href="#思路八：n进制快速幂呢？不妨对n进行实验！" class="headerlink" title="思路八：n进制快速幂呢？不妨对n进行实验！"></a>思路八：n进制快速幂呢？不妨对n进行实验！</h3><p>n进制快速幂代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n = <span class="hljs-number">4</span>; <br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> result = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b % n; i++)<span class="hljs-comment">//提取b的当前位（n进制下的个位）</span><br>            result = (result * a) % p;<br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> temp = a;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++)<br>            a = (a * temp) % p;<span class="hljs-comment">//自乘n-1次，更换乘积因子</span><br>        b /= n;<br>    &#125;<br>    <span class="hljs-keyword">return</span> result;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> a, b, p;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; p;<br>    cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;^&quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&quot; mod &quot;</span> &lt;&lt; p &lt;&lt; <span class="hljs-string">&quot;=&quot;</span> &lt;&lt; <span class="hljs-built_in">quickpow</span>(a, b, p) &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>测试点结果：<br>n&#x3D;2<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032322885.png" srcset="/img/loading.gif" lazyload alt="202411032322885.png"><br>n&#x3D;3<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032322150.png" srcset="/img/loading.gif" lazyload alt="202411032322150.png"><br>n&#x3D;4<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032322046.png" srcset="/img/loading.gif" lazyload alt="202411032322046.png"><br>n&#x3D;5<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032322635.png" srcset="/img/loading.gif" lazyload alt="202411032322635.png"><br>不难发现，实验结果依然是n&#x3D;4最快，与递归中4分递归也是最快的是一致的。<br>因此又一次论证了2不是最快的，理论和实践证明3比2快，实践证明4甚至更快！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本质上，一共只有2个大思路：</p>
+<ol>
+<li>第一个是自下而上的想法，先自乘平方，再对剩下的递归，由于没有把b精准的分解，而是有剩下的指数，因此代码的实现度较低。</li>
+<li>第二个是自上而下的想法，而这个大思路中又分为两个小思路：<ol>
+<li>n分递归法，运用递归我们不需要一步看清b的最终分解方式，只需要对指数n分递归即可，实现度较高。</li>
+<li>n进制快速幂法，运用进制转换，我们一步看清了b的最终分解方式，因此代码更简洁效率也高，思维度也较高。<br>最终我们通过试验结合对复杂度$O(n\cdot log_n(b))$的最值分析，证明了3、4分递归和或者3、4进制快速幂具有更快的速度，但是由于计算机中的数字是以2进制存储的，因此2进制快速幂的代码实现度最高更有利于用位运算操作，代码更简洁，因此常规的模版便是2进制快速幂！</li>
+</ol>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="category-chain-item">算法笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/11/07/0xGamewpcancan/" title="hicancan&#39;s 0xGame Writeup">
+                        <span class="hidden-mobile">hicancan&#39;s 0xGame Writeup</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","appKey":"LhMpQZRUjN1uAShUVK1U7OHc","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hicancan.github.io" target="_blank" rel="nofollow noopener"><span>hicancan</span></a> <i class="iconfont icon-love"></i> <a href="https://hicancan.github.io" target="_blank" rel="nofollow noopener"><span>去往未知远方</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

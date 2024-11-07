@@ -19,16 +19,16 @@
   <meta name="author" content="hicancan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="康康ACM小图标能不能加载出来哈哈哈~">
+    <meta name="description" content="关于斐波那契数列相邻项商的正负交替求和的极限题目描述斐波那契数列定义如下：$$F_1&#x3D;0,F_2&#x3D;1,F_n&#x3D;F_{n-1}+F_{n-2}(n\geqslant 3)$$定义数列$$a_n&#x3D;\dfrac{F_{n+2}}{F_{n+1}}$$要求考察数列和$s_n$在n趋于无穷时的情况：$$s_n&#x3D;\sum_{i&#x3D;1}^{n}{(-1)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ACM小图标哈哈哈">
-<meta property="og:url" content="http://example.com/2024/11/06/ACM/index.html">
+<meta property="og:title" content="由C语言实验报告引申的有趣极限题">
+<meta property="og:url" content="http://example.com/2024/11/07/3_1/index.html">
 <meta property="og:site_name" content="hicancan">
-<meta property="og:description" content="康康ACM小图标能不能加载出来哈哈哈~">
+<meta property="og:description" content="关于斐波那契数列相邻项商的正负交替求和的极限题目描述斐波那契数列定义如下：$$F_1&#x3D;0,F_2&#x3D;1,F_n&#x3D;F_{n-1}+F_{n-2}(n\geqslant 3)$$定义数列$$a_n&#x3D;\dfrac{F_{n+2}}{F_{n+1}}$$要求考察数列和$s_n$在n趋于无穷时的情况：$$s_n&#x3D;\sum_{i&#x3D;1}^{n}{(-1)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411062311861.jpeg">
-<meta property="article:published_time" content="2024-11-06T12:11:37.000Z">
-<meta property="article:modified_time" content="2024-11-06T15:57:26.570Z">
+<meta property="article:published_time" content="2024-11-07T11:11:37.000Z">
+<meta property="article:modified_time" content="2024-11-07T03:35:36.629Z">
 <meta property="article:author" content="hicancan">
 <meta property="article:tag" content="原创">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
   
   
   
-  <title>ACM小图标哈哈哈 - hicancan</title>
+  <title>由C语言实验报告引申的有趣极限题 - hicancan</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ACM小图标哈哈哈"></span>
+            <span id="subtitle" data-typed-text="由C语言实验报告引申的有趣极限题"></span>
           
         </div>
 
@@ -226,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-06 20:11" pubdate>
-          2024年11月6日 晚上
+        <time datetime="2024-11-07 19:11" pubdate>
+          2024年11月7日 晚上
         </time>
       </span>
     
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          16 字
+          1.1k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          1 分钟
+          10 分钟
         
       </span>
     
@@ -295,12 +295,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ACM小图标哈哈哈</h1>
+            <h1 id="seo-header">由C语言实验报告引申的有趣极限题</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="康康ACM小图标能不能加载出来哈哈哈"><a href="#康康ACM小图标能不能加载出来哈哈哈" class="headerlink" title="康康ACM小图标能不能加载出来哈哈哈~"></a>康康ACM小图标能不能加载出来哈哈哈~</h1><p><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411062311861.jpeg" srcset="/img/loading.gif" lazyload alt="202411062311861.jpeg"></p>
+                <h1 id="关于斐波那契数列相邻项商的正负交替求和的极限"><a href="#关于斐波那契数列相邻项商的正负交替求和的极限" class="headerlink" title="关于斐波那契数列相邻项商的正负交替求和的极限"></a>关于斐波那契数列相邻项商的正负交替求和的极限</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>斐波那契数列定义如下：<br>$$<br>F_1&#x3D;0,F_2&#x3D;1,F_n&#x3D;F_{n-1}+F_{n-2}(n\geqslant 3)<br>$$<br>定义数列<br>$$<br>a_n&#x3D;\dfrac{F_{n+2}}{F_{n+1}}<br>$$<br>要求考察数列和$s_n$在n趋于无穷时的情况：<br>$$<br>s_n&#x3D;\sum_{i&#x3D;1}^{n}{(-1)^{n+1}a_i}&#x3D; \sum_{i&#x3D;1}^{n}{(-1)^{n+1} \dfrac{F_{n+2}}{F_{n+1}}}<br>$$<br>例如：<br>$$<br>s_1&#x3D;\dfrac{F_{3}}{F_{2}}&#x3D;\dfrac{2}{1}&#x3D;2<br>$$<br>$$<br>s_2&#x3D;\dfrac{F_{3}}{F_{2}}-\dfrac{F_{4}}{F_{3}}&#x3D;\dfrac{2}{1}- \dfrac{3}{2}&#x3D;\dfrac{1}{2}<br>$$<br>$$<br>s_3&#x3D;\dfrac{F_{3}}{F_{2}}-\dfrac{F_{4}}{F_{3}}+\dfrac{F_{5}}{F_{4}}&#x3D;\dfrac{2}{1}- \dfrac{3}{2}+\dfrac{5}{3}&#x3D;\dfrac{11}{6}<br>$$<br>$$<br>\cdots<br>$$<br>$$<br>s_n&#x3D;\dfrac{F_{3}}{F_{2}}-\dfrac{F_{4}}{F_{3}}+\dfrac{F_{5}}{F_{4}}-\dfrac{F_{6}}{F_{5}}+\cdots+(-1)^{n+1} \dfrac{F_{n+2}}{F_{n+1}}<br>$$</p>
+<h2 id="解答思路"><a href="#解答思路" class="headerlink" title="解答思路"></a>解答思路</h2><h3 id="1-由于正负摆动，所以想先将正负相邻两项合并消除摆动"><a href="#1-由于正负摆动，所以想先将正负相邻两项合并消除摆动" class="headerlink" title="1.由于正负摆动，所以想先将正负相邻两项合并消除摆动"></a>1.由于正负摆动，所以想先将正负相邻两项合并消除摆动</h3><p>不妨找找规律<br>$$<br>a_1-a_2&#x3D;\dfrac{F_{3}}{F_{2}}-\dfrac{F_{4}}{F_{3}}&#x3D;\dfrac{2}{1} - \dfrac{3}{2}&#x3D;\dfrac{1}{1\times2}<br>$$<br>$$<br>a_3-a_4&#x3D;\dfrac{F_{5}}{F_{4}}-\dfrac{F_{6}}{F_{5}}&#x3D;\dfrac{5}{3}- \dfrac{8}{5}&#x3D;\dfrac{1}{3\times5}<br>$$<br>$$<br>a_5-a_6&#x3D;\dfrac{F_{7}}{F_{6}}-\dfrac{F_{8}}{F_{7}}&#x3D;\dfrac{13}{8}- \dfrac{21}{13}&#x3D;\dfrac{1}{8\times13}<br>$$<br>$$<br>\cdots<br>$$<br>不妨猜想：</p>
+<p>$$<br>a_{2i-1}-a_{2i}&#x3D;\dfrac{F_{2i+1}}{F_{2i}}-\dfrac{F_{2i+2}}{F_{2i+1}}&#x3D;\dfrac{1}{F_{2i}\times F_{2i+1}}<br>$$</p>
+<p>也就是要证明：<br>$$<br>F_{2i+1}\times F_{2i+1}-F_{2i}\times F_{2i+2}&#x3D;1<br>$$<br>而</p>
+<p>$$<br>\begin{align*}<br>F_{2i+1}\times F_{2i+1}-F_{2i}\times F_{2i+2}<br>&amp;&#x3D; F_{2i+1}\times F_{2i+1}-F_{2i}\times (F_{2i+1}+F_{2i}) \<br>&amp;&#x3D; F_{2i+1}\times (F_{2i+1}-F_{2i})- F_{2i}\times F_{2i} \<br>&amp;&#x3D; F_{2i+1}\times F_{2i-1}-F_{2i}\times F_{2i}<br>\end{align*}<br>$$<br>即<br>$$<br>F_{2i+1}\times F_{2i+1}-F_{2i}\times F_{2i+2}&#x3D;F_{2i+1}\times F_{2i-1}-F_{2i}\times F_{2i}<br>$$<br>从而有<br>$$<br>F_{2i+1}\times F_{2i+1}-F_{2i}\times F_{2i+2}&#x3D;F_{2i-1}\times F_{2i-1}-F_{2i-2}\times F_{2i}<br>$$<br>从而有<br>$$<br>F_{2i+1}\times F_{2i+1}-F_{2i}\times F_{2i+2}&#x3D;F_{3}\times F_{3}-F_{2}\times F_{4}&#x3D;2\times 2-1\times 3&#x3D;1<br>$$</p>
+<p>因此猜想成立，所以<br>$$<br>s_{2n-1}&#x3D; \sum_{i&#x3D;1}^{n}{\dfrac{1}{F_{2i}\times F_{2i+1}}}<br>$$</p>
+<h3 id="2-写出通项公式"><a href="#2-写出通项公式" class="headerlink" title="2.写出通项公式"></a>2.写出通项公式</h3><p>因此，$s_{2n-1}$的通项公式为：<br>$$<br>s_{2n-1}&#x3D; \sum_{i&#x3D;1}^{n}{\dfrac{1}{F_{2i}\times F_{2i+1}}}&#x3D;\dfrac{1}{F_2\times F_3}+\dfrac{1}{F_4\times F_5}+\dfrac{1}{F_6\times F_7}+\cdots+\dfrac{1}{F_{2n}\times F_{2n+1}}<br>$$<br>$$<br>s_{2n}&#x3D; s_{2n-1}-\dfrac{F_{2n+2}}{F_{2n+1}}&#x3D; \sum_{i&#x3D;1}^{n}{\dfrac{1}{F_{2i}\times F_{2i+1}}}-\dfrac{F_{2n+3}}{F_{2n+2}}<br>$$<br>现在我们已经消除了正负号，现在我们只需证明$s_{2n-1}$的当n趋于无穷时收敛于一个定值a，即：<br>$$<br>\lim_{n\to\infty}{s_{2n-1}}&#x3D;\lim_{n\to\infty}{\dfrac{1}{F_2\times F_3}+\dfrac{1}{F_4\times F_5}+\dfrac{1}{F_6\times F_7}+\cdots+\dfrac{1}{F_{2n}\times F_{2n+1}}}&#x3D;a<br>$$<br>而此时自然的，由于斐波那契数列相邻两项商的极限为$\varphi&#x3D;\dfrac{1+\sqrt{5}}{2}\approx1.618034$，因此<br>$$<br>\lim_{n\to\infty}{s_{2n}}&#x3D;\lim_{n\to\infty}{s_{2n-1}}-\lim_{n\to\infty}{\dfrac{F_{2n+3}}{F_{2n+2}}}&#x3D;\lim_{n\to\infty}{s_{2n-1}}-\varphi&#x3D;a-\varphi<br>$$<br>而结合编程已经计算出极限的近似值：<br>奇数项和$s_{2n-1}\approx2.19596$<br>偶数项和$s_{2n}\approx0.577922$<br>验证：<br>$$<br>2.19596-1.618034\approx0.577922<br>$$<br>十分符合刚刚的论述！</p>
+<h3 id="3-证明"><a href="#3-证明" class="headerlink" title="3.证明"></a>3.证明</h3><p>下面利用<br>由Binet公式：<br>$$<br>F_n&#x3D;\dfrac{\varphi^n-\psi^n}{\sqrt{5}}<br>$$</p>
+<p>其中 $\varphi&#x3D;\dfrac{1+\sqrt{5}}{2} $， $\psi&#x3D;\dfrac{1-\sqrt{5}}{2} $<br>又：$\varphi&gt;1&gt;0&gt;\psi&gt;-1$<br>因此当n趋于无穷时$$\psi^n$$趋于0，而$\varphi^n$趋于无穷<br>因此<br>$$\lim_{n\to\infty}{F_n}&#x3D;\lim_{n\to\infty}{\dfrac{\varphi^n-\psi^n}{\sqrt{5}}}&#x3D;\lim_{n\to\infty}{\dfrac{\varphi^n}{\sqrt{5}}}$$<br>因此<br>$$<br>\lim_{n\to\infty}{\dfrac{1}{F_{2i}\times F_{2i+1}}}&#x3D;\lim_{n\to\infty}{\dfrac{\sqrt{5}}{\varphi^{2i}}\times\dfrac{\sqrt{5}}{\varphi^{2i+1}}}&#x3D;\lim_{n\to\infty}{\dfrac{5}{\varphi^{4i+1}}}<br>$$<br>因此：存在N，当n&gt;N时，使得：<br>$$<br>\begin{align*}<br>\lim_{n\to\infty}{s_{2n-1}}&amp;&#x3D;\lim_{n\to\infty}{\dfrac{1}{F_2\times F_3}+\dfrac{1}{F_4\times F_5}+\dfrac{1}{F_6\times F_7}+\cdots+\dfrac{1}{F_{2n}\times F_{2n+1}}} \<br>&amp;&#x3D;\lim_{n\to\infty}{\sum_{i&#x3D;1}^{n}{\dfrac{5}{\varphi^{4i+1}}}} \<br>\end{align*}<br>$$<br>因为其首项为$\dfrac{5}{\varphi^5}&gt;0$，公比为$0&lt;\dfrac{1}{\varphi^4}&lt;1$，求和收敛性显然成立。<br>又N为有限数，而当n&gt;N时，$\lim_{n\to\infty}{\sum_{i&#x3D;1}^{n}{\dfrac{5}{\varphi^{4i+1}}}}$收敛<br>因此$<br>\lim_{n\to\infty}{s_{2n-1}}<br>$收敛</p>
 
                 
               </div>
@@ -319,7 +327,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/ACM/" class="category-chain-item">ACM</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" class="category-chain-item">算法笔记</a>
   
   
 
@@ -348,9 +356,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/07/10_25/" title="hicancan的科研周报10.25">
+                      <a href="/2024/11/07/0xGamewpcancan/" title="hicancan&#39;s 0xGame Writeup">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hicancan的科研周报10.25</span>
+                        <span class="hidden-mobile">hicancan&#39;s 0xGame Writeup</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -358,8 +366,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/06/Is%20%E2%80%98Rizz%E2%80%99%20the%20Secret%20to%20Getting%20Ahead%20at%20Work/" title="Is ‘Rizz’ the Secret to Getting Ahead at Work?">
-                        <span class="hidden-mobile">Is ‘Rizz’ the Secret to Getting Ahead at Work?</span>
+                      <a href="/2024/11/07/10_25/" title="hicancan的科研周报10.25">
+                        <span class="hidden-mobile">hicancan的科研周报10.25</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

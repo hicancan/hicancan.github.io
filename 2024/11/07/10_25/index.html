@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071453426.jpg">
+  <link rel="icon" href="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071453426.jpg">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -74,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -315,7 +315,7 @@
 <ol>
 <li>原始数据采集：使用毫米波雷达采集动态手势数据。</li>
 <li>数字信号处理：对采集到的数据进行滤波、去噪等处理。</li>
-<li>动态手势分类网络识别：从预处理后的数据中提取有用的特征，并使用深度学习算法进行手势分类。<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330715.png" srcset="/img/loading.gif" lazyload alt="202411032330715.png"></li>
+<li>动态手势分类网络识别：从预处理后的数据中提取有用的特征，并使用深度学习算法进行手势分类。<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330715.png" alt="202411032330715.png"></li>
 </ol>
 <h3 id="2-3-学习了文中提出的动态手势识别网络模型"><a href="#2-3-学习了文中提出的动态手势识别网络模型" class="headerlink" title="2.3 学习了文中提出的动态手势识别网络模型"></a>2.3 学习了文中提出的动态手势识别网络模型</h3><ul>
 <li>动态手势识别网络分为四个部分：</li>
@@ -324,14 +324,14 @@
 <li>网络输入：距离-角度图RAM+距离-多普勒图RDM。</li>
 <li>特征提取：经过两个3DCNN主干网络进行空间特征提取。</li>
 <li>时间序列分析：利用Transformer编码器用来进行时序特征提取。</li>
-<li>手势分类结果概率预测：经过一个全链接层进行分类。<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330751.png" srcset="/img/loading.gif" lazyload alt="202411032330751.png"><br>该网络模型的亮点：三维卷积网络（3DCNN）与Transformer的融合：通过将三维卷积网络用于空间特征提取，再结合Transformer模块进行时序特征编码，该模型能够同时捕捉手势的空间和时间特征，提高了识别的准确性。</li>
+<li>手势分类结果概率预测：经过一个全链接层进行分类。<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330751.png" alt="202411032330751.png"><br>该网络模型的亮点：三维卷积网络（3DCNN）与Transformer的融合：通过将三维卷积网络用于空间特征提取，再结合Transformer模块进行时序特征编码，该模型能够同时捕捉手势的空间和时间特征，提高了识别的准确性。</li>
 </ol>
 <h3 id="2-4-学习如何提高数据集的多场景性以提高模型的泛化能力"><a href="#2-4-学习如何提高数据集的多场景性以提高模型的泛化能力" class="headerlink" title="2.4 学习如何提高数据集的多场景性以提高模型的泛化能力"></a>2.4 学习如何提高数据集的多场景性以提高模型的泛化能力</h3><ol>
 <li>考虑汽车：在加速、减速、怠速、匀速与转弯等各种场景产生的震动而带来的惯性干扰。</li>
 <li>考虑人：避免车内人员换挡、转身等非指令动态被误识别。</li>
 <li>考虑环境：避免车内外的其他环境噪声的动态变化也会对数据采集造成干扰</li>
 </ol>
-<h3 id="2-5-思考意义：RDM与RAM特征图处理前后以及对比实验结果"><a href="#2-5-思考意义：RDM与RAM特征图处理前后以及对比实验结果" class="headerlink" title="2.5  思考意义：RDM与RAM特征图处理前后以及对比实验结果"></a>2.5  思考意义：RDM与RAM特征图处理前后以及对比实验结果</h3><p><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330376.png" srcset="/img/loading.gif" lazyload alt="202411032330376.png"><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330314.png" srcset="/img/loading.gif" lazyload alt="202411032330314.png"><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330090.png" srcset="/img/loading.gif" lazyload alt="202411032330090.png"><br>因此：</p>
+<h3 id="2-5-思考意义：RDM与RAM特征图处理前后以及对比实验结果"><a href="#2-5-思考意义：RDM与RAM特征图处理前后以及对比实验结果" class="headerlink" title="2.5  思考意义：RDM与RAM特征图处理前后以及对比实验结果"></a>2.5  思考意义：RDM与RAM特征图处理前后以及对比实验结果</h3><p><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330376.png" alt="202411032330376.png"><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330314.png" alt="202411032330314.png"><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411032330090.png" alt="202411032330090.png"><br>因此：</p>
 <ul>
 <li>该文提出的算法达到了最高的平均分类精度97.14%，远好于传统的HMM算法. 仅采用3DCNN网络的分类准确率只有93.34%，</li>
 <li>当加入LSTM和Transformer模块手势分类精度明显提高. 在3DCNN中添加Transformer模块要比LSTM模块分类准确率也增加1.1%</li>
@@ -420,9 +420,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/07/3_1/" title="由C语言实验报告引申的有趣极限题">
+                      <a href="/2024/11/07/0xGamewpcancan/" title="hicancan&#39;s 0xGame Writeup">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">由C语言实验报告引申的有趣极限题</span>
+                        <span class="hidden-mobile">hicancan&#39;s 0xGame Writeup</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -430,8 +430,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/06/ACM/" title="ACM小图标哈哈哈">
-                        <span class="hidden-mobile">ACM小图标哈哈哈</span>
+                      <a href="/2024/11/07/3_1/" title="由C语言实验报告引申的有趣极限题">
+                        <span class="hidden-mobile">由C语言实验报告引申的有趣极限题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -444,7 +444,7 @@
             
   
   
-    <article id="comments" lazyload>
+    <article id="comments">
       
   <div id="valine"></div>
   <script type="text/javascript">
@@ -659,10 +659,6 @@
 
 
 
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
 
 
 
@@ -767,7 +763,7 @@
               inlineMath: { '[+]': [['$', '$']] }
             },
             loader : {
-              load: ['ui/lazy']
+              
             },
             options: {
               renderActions: {

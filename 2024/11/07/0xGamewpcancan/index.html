@@ -19,12 +19,12 @@
   <meta name="author" content="hicancan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="0xGame 2024 Week 1 Writeuphicancan’s 0xGame WriteupMisc0xGame2048 “通过一点也不可靠的途径，我们提前截获了0xGame2048的题目，据说这就是那时候的base编码?” 给了一个0xGame2048.txt文件，里面是一串乱码Жఱ൲ඌיય೬ࢶЖۍךะtঋළม۹ρԊҽඹ 进过多个不同的base编码尝试后，猜测该字符串是由base204">
+    <meta name="description" content="0xGame 2024 Week 1 Writeup hicancan’s 0xGame Writeup Misc 0xGame2048  “通过一点也不可靠的途径，我们提前截获了0xGame2048的题目，据说这就是那时候的base编码?” 给了一个0xGame2048.txt文件，里面是一串乱码 Жఱ൲ඌיય೬ࢶЖۍךะtঋළม۹ρԊҽඹ 进过多个不同的base编码尝试后，猜测该字符串是由ba">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hicancan&#39;s 0xGame Writeup">
 <meta property="og:url" content="http://example.com/2024/11/07/0xGamewpcancan/index.html">
 <meta property="og:site_name" content="hicancan">
-<meta property="og:description" content="0xGame 2024 Week 1 Writeuphicancan’s 0xGame WriteupMisc0xGame2048 “通过一点也不可靠的途径，我们提前截获了0xGame2048的题目，据说这就是那时候的base编码?” 给了一个0xGame2048.txt文件，里面是一串乱码Жఱ൲ඌיય೬ࢶЖۍךะtঋළม۹ρԊҽඹ 进过多个不同的base编码尝试后，猜测该字符串是由base204">
+<meta property="og:description" content="0xGame 2024 Week 1 Writeup hicancan’s 0xGame Writeup Misc 0xGame2048  “通过一点也不可靠的途径，我们提前截获了0xGame2048的题目，据说这就是那时候的base编码?” 给了一个0xGame2048.txt文件，里面是一串乱码 Жఱ൲ඌיય೬ࢶЖۍךะtঋළม۹ρԊҽඹ 进过多个不同的base编码尝试后，猜测该字符串是由ba">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071102390.png">
 <meta property="article:published_time" content="2024-11-07T11:11:37.000Z">
@@ -47,6 +47,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -74,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"always","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -181,7 +183,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                <span>联系我</span>
+                <span>关于</span>
               </a>
             </li>
           
@@ -288,6 +290,19 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
 
@@ -310,35 +325,87 @@
             
               <div class="markdown-body">
                 
-                <h1 id="0xGame-2024-Week-1-Writeup"><a href="#0xGame-2024-Week-1-Writeup" class="headerlink" title="0xGame 2024 Week 1 Writeup"></a>0xGame 2024 Week 1 Writeup</h1><h2 id="hicancan’s-0xGame-Writeup"><a href="#hicancan’s-0xGame-Writeup" class="headerlink" title="hicancan’s 0xGame Writeup"></a>hicancan’s 0xGame Writeup</h2><h3 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h3><h4 id="0xGame2048"><a href="#0xGame2048" class="headerlink" title="0xGame2048"></a>0xGame2048</h4><ol>
+                <h1>0xGame 2024 Week 1 Writeup</h1>
+<h2 id="hicancan’s-0xGame-Writeup">hicancan’s 0xGame Writeup</h2>
+<h3 id="Misc">Misc</h3>
+<h4 id="0xGame2048">0xGame2048</h4>
+<ol>
 <li>“通过一点也不可靠的途径，我们提前截获了0xGame2048的题目，据说这就是那时候的base编码?”</li>
-<li>给了一个0xGame2048.txt文件，里面是一串乱码<br>Жఱ൲ඌיય೬ࢶЖۍךะtঋළม۹ρԊҽඹ</li>
+<li>给了一个0xGame2048.txt文件，里面是一串乱码<br>
+Жఱ൲ඌיય೬ࢶЖۍךะtঋළม۹ρԊҽඹ</li>
 <li>进过多个不同的base编码尝试后，猜测该字符串是由base2048编码的</li>
-<li>搜索找到一个在线base2048解码工具<br><a target="_blank" rel="noopener" href="https://nerdmosis.com/tools/encode-and-decode-base2048">https://nerdmosis.com/tools/encode-and-decode-base2048</a></li>
-<li>利用该在线解码工具解码后得到flag<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052882.png" alt="alt text"></li>
+<li>搜索找到一个在线base2048解码工具<br>
+<a target="_blank" rel="noopener" href="https://nerdmosis.com/tools/encode-and-decode-base2048">https://nerdmosis.com/tools/encode-and-decode-base2048</a></li>
+<li>利用该在线解码工具解码后得到flag<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052882.png" alt="alt text"></li>
 <li>flag：0xGame{W3lc0me_t0_0xG4me!!!}</li>
 </ol>
-<h4 id="关注DK盾谢谢喵"><a href="#关注DK盾谢谢喵" class="headerlink" title="关注DK盾谢谢喵"></a>关注DK盾谢谢喵</h4><ol>
-<li>“关注微信公众号, 发送 0xGame 2024 以获取 flag”<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052885.png" alt="alt text"></li>
-<li>打开微信扫描二维码，关注后发送”0xGame 2024”，得到flag<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052886.png" alt="alt text"></li>
+<h4 id="关注DK盾谢谢喵">关注DK盾谢谢喵</h4>
+<ol>
+<li>“关注微信公众号, 发送 0xGame 2024 以获取 flag”<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052885.png" alt="alt text"></li>
+<li>打开微信扫描二维码，关注后发送&quot;0xGame 2024&quot;，得到flag<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052886.png" alt="alt text"></li>
 <li>flag：0xGame{W31c0m3_70_0x64m3_2024_5p0n50r3d_8y_dkdun}</li>
 </ol>
-<h4 id="我的世界基岩版"><a href="#我的世界基岩版" class="headerlink" title="我的世界基岩版(?"></a>我的世界基岩版(?</h4><ol>
-<li>服务器：mc.st4rr.top:25526<br>版本：java 1.21 Fabric<br>“题目很简单，只是为了开个服务器给大家玩玩 :)<br>如果服务器崩了或者有问题欢迎到群里拷打出题人 :(<br>世界中铁轨为玩家所建，另外告示牌皆为玩家所编辑，切勿随意相信:(“</li>
-<li>此地无银三百两，那必须找找告示牌哇，注意ve后_的为英语中的换行连字符<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052887.png" alt="alt text"></li>
+<h4 id="我的世界基岩版">我的世界基岩版(?</h4>
+<ol>
+<li>服务器：mc.st4rr.top:25526<br>
+版本：java 1.21 Fabric<br>
+“题目很简单，只是为了开个服务器给大家玩玩 😃<br>
+如果服务器崩了或者有问题欢迎到群里拷打出题人 😦<br>
+世界中铁轨为玩家所建，另外告示牌皆为玩家所编辑，切勿随意相信:(”</li>
+<li>此地无银三百两，那必须找找告示牌哇，注意ve后_的为英语中的换行连字符<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052887.png" alt="alt text"></li>
 <li>flag:0xGame{MC_SErver_4_CTFers}</li>
 </ol>
-<h3 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h3><h4 id="Caesar-Cipher"><a href="#Caesar-Cipher" class="headerlink" title="Caesar Cipher"></a>Caesar Cipher</h4><ol>
-<li>密文：0yHbnf{Uif_Cfhjoojoh_Pg_Dszqup}<br>提示：凯撒加密。</li>
+<h3 id="Crypto">Crypto</h3>
+<h4 id="Caesar-Cipher">Caesar Cipher</h4>
+<ol>
+<li>密文：0yHbnf{Uif_Cfhjoojoh_Pg_Dszqup}<br>
+提示：凯撒加密。</li>
 <li>搜索到凯撒加密解密在线工具：<a target="_blank" rel="noopener" href="https://ctf.bugku.com/tool/caesar">https://ctf.bugku.com/tool/caesar</a></li>
-<li>由于不知道偏移量所以需要枚举偏移量，偏移量为1-25<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052888.png" alt="alt text"><br>逐个尝试得到25个解密后的字符串，发现偏移量为1时解密后的字符串有意义</li>
+<li>由于不知道偏移量所以需要枚举偏移量，偏移量为1-25<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052888.png" alt="alt text"><br>
+逐个尝试得到25个解密后的字符串，发现偏移量为1时解密后的字符串有意义</li>
 <li>flag:0xGame{The_Beginning_Of_Crypto}</li>
 </ol>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><ol>
-<li><p>给了一段代码，尝试理解并补充注释如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导入bytes_to_long函数，用于将字节串转换为长整数</span><br><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> bytes_to_long<br><span class="hljs-comment"># 导入base64编码函数</span><br><span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64encode<br><span class="hljs-comment"># 导入secret模块中的flag变量，这个变量应该是一个字符串，代表要处理的信息</span><br><span class="hljs-keyword">from</span> secret <span class="hljs-keyword">import</span> flag<br><br><span class="hljs-comment"># 将flag字符串编码为字节串</span><br>msg = flag.encode()<br><span class="hljs-comment"># 获取编码后的字节串长度</span><br>length = <span class="hljs-built_in">len</span>(msg)<br><br><span class="hljs-comment"># 确保字节串的长度可以被4整除，这样才能均匀地分成四个部分</span><br><span class="hljs-keyword">assert</span> length%<span class="hljs-number">4</span> == <span class="hljs-number">0</span><br><span class="hljs-comment"># 计算每个部分的长度</span><br>block = length//<span class="hljs-number">4</span><br><span class="hljs-comment"># 将字节串分成四个部分，每部分长度为block</span><br>m = [ msg[ block*(i) : block*(i+<span class="hljs-number">1</span>) ] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>) ]<br><br><span class="hljs-comment"># 第一部分直接赋值给m0</span><br>m0 = m[<span class="hljs-number">0</span>]<br><span class="hljs-comment"># 第二部分使用bytes_to_long转换为长整数，赋值给m1</span><br>m1 = bytes_to_long(m[<span class="hljs-number">1</span>])<br><span class="hljs-comment"># 第三部分转换为十六进制字符串，赋值给m2</span><br>m2 = m[<span class="hljs-number">2</span>].<span class="hljs-built_in">hex</span>()<br><span class="hljs-comment"># 第四部分使用base64编码，赋值给m3</span><br>m3 = b64encode(m[<span class="hljs-number">3</span>])<br><br><span class="hljs-comment"># 打印出每个部分的值</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;m0 = <span class="hljs-subst">&#123;m0&#125;</span>\nm1 = <span class="hljs-subst">&#123;m1&#125;</span>\nm2 = <span class="hljs-subst">&#123;m2&#125;</span>\nm3 = <span class="hljs-subst">&#123;m3&#125;</span>&#x27;</span>)<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>分析：为了找出flag，我们需要对每个部分进行逆向操作。</p>
+<h4 id="Code">Code</h4>
+<ol>
+<li>给了一段代码，尝试理解并补充注释如下</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 导入bytes_to_long函数，用于将字节串转换为长整数</span>
+<span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> bytes_to_long
+<span class="hljs-comment"># 导入base64编码函数</span>
+<span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64encode
+<span class="hljs-comment"># 导入secret模块中的flag变量，这个变量应该是一个字符串，代表要处理的信息</span>
+<span class="hljs-keyword">from</span> secret <span class="hljs-keyword">import</span> flag
+
+<span class="hljs-comment"># 将flag字符串编码为字节串</span>
+msg = flag.encode()
+<span class="hljs-comment"># 获取编码后的字节串长度</span>
+length = <span class="hljs-built_in">len</span>(msg)
+
+<span class="hljs-comment"># 确保字节串的长度可以被4整除，这样才能均匀地分成四个部分</span>
+<span class="hljs-keyword">assert</span> length%<span class="hljs-number">4</span> == <span class="hljs-number">0</span>
+<span class="hljs-comment"># 计算每个部分的长度</span>
+block = length//<span class="hljs-number">4</span>
+<span class="hljs-comment"># 将字节串分成四个部分，每部分长度为block</span>
+m = [ msg[ block*(i) : block*(i+<span class="hljs-number">1</span>) ] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>) ]
+
+<span class="hljs-comment"># 第一部分直接赋值给m0</span>
+m0 = m[<span class="hljs-number">0</span>]
+<span class="hljs-comment"># 第二部分使用bytes_to_long转换为长整数，赋值给m1</span>
+m1 = bytes_to_long(m[<span class="hljs-number">1</span>])
+<span class="hljs-comment"># 第三部分转换为十六进制字符串，赋值给m2</span>
+m2 = m[<span class="hljs-number">2</span>].<span class="hljs-built_in">hex</span>()
+<span class="hljs-comment"># 第四部分使用base64编码，赋值给m3</span>
+m3 = b64encode(m[<span class="hljs-number">3</span>])
+
+<span class="hljs-comment"># 打印出每个部分的值</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;m0 = <span class="hljs-subst">&#123;m0&#125;</span>\nm1 = <span class="hljs-subst">&#123;m1&#125;</span>\nm2 = <span class="hljs-subst">&#123;m2&#125;</span>\nm3 = <span class="hljs-subst">&#123;m3&#125;</span>&#x27;</span>)</code></pre></div>
+<ol start="2">
+<li>分析：为了找出flag，我们需要对每个部分进行逆向操作。
 <ol>
 <li>m0是原始的字节串的一部分。</li>
 <li>m1是一个长整数，我们需要将其转换回字节串。</li>
@@ -346,99 +413,384 @@
 <li>m3是一个base64编码的字符串，我们需要对其进行解码。</li>
 </ol>
 </li>
-<li><p>写出逆向解码代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes<br><span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64decode<br><span class="hljs-comment"># 根据注释中的示例输出，我们有：</span><br>m0 = <span class="hljs-string">b&#x27;0xGame&#123;73d7&#x27;</span><br>m1 = <span class="hljs-number">60928972245886112747629873</span><br>m2 = <span class="hljs-string">&#x27;3165662d393339332d3034&#x27;</span><br>m3 = <span class="hljs-string">b&#x27;N2YwZTdjNGRlMX0=&#x27;</span><br><br><span class="hljs-comment"># 将m1转换回字节串</span><br>m1_bytes = long_to_bytes(m1)<br><span class="hljs-comment"># 将m2的十六进制字符串转换回字节串</span><br>m2_bytes = <span class="hljs-built_in">bytes</span>.fromhex(m2)<br><span class="hljs-comment"># 将m3的base64编码解码回字节串</span><br>m3_bytes = b64decode(m3)<br><span class="hljs-comment"># 将所有部分合并回原始的flag字符串</span><br>flag_bytes = m0 + m1_bytes + m2_bytes + m3_bytes<br><span class="hljs-comment"># 将字节串解码为字符串</span><br>flag = flag_bytes.decode()<br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure></li>
-<li><p><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052890.png" alt="alt text"><br>编译运行得到flag：</p>
-</li>
+<li>写出逆向解码代码</li>
 </ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes
+<span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64decode
+<span class="hljs-comment"># 根据注释中的示例输出，我们有：</span>
+m0 = <span class="hljs-string">b&#x27;0xGame&#123;73d7&#x27;</span>
+m1 = <span class="hljs-number">60928972245886112747629873</span>
+m2 = <span class="hljs-string">&#x27;3165662d393339332d3034&#x27;</span>
+m3 = <span class="hljs-string">b&#x27;N2YwZTdjNGRlMX0=&#x27;</span>
+
+<span class="hljs-comment"># 将m1转换回字节串</span>
+m1_bytes = long_to_bytes(m1)
+<span class="hljs-comment"># 将m2的十六进制字符串转换回字节串</span>
+m2_bytes = <span class="hljs-built_in">bytes</span>.fromhex(m2)
+<span class="hljs-comment"># 将m3的base64编码解码回字节串</span>
+m3_bytes = b64decode(m3)
+<span class="hljs-comment"># 将所有部分合并回原始的flag字符串</span>
+flag_bytes = m0 + m1_bytes + m2_bytes + m3_bytes
+<span class="hljs-comment"># 将字节串解码为字符串</span>
+flag = flag_bytes.decode()
+<span class="hljs-built_in">print</span>(flag)</code></pre></div>
+<ol start="4">
+<li></li>
+</ol>
+<p><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052890.png" alt="alt text"><br>
+编译运行得到flag：</p>
 <p>0xGame{73d72f64-7656-11ef-9393-047f0e7c4de1}</p>
-<h4 id="Code-Vigenere"><a href="#Code-Vigenere" class="headerlink" title="Code-Vigenere"></a>Code-Vigenere</h4><ol>
-<li>给了一段代码，尝试理解并补充注释如下<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 从secret模块导入flag变量</span><br><span class="hljs-keyword">from</span> secret <span class="hljs-keyword">import</span> flag<br><span class="hljs-comment"># 从os模块导入urandom函数，用于生成随机字节串</span><br><span class="hljs-keyword">from</span> os <span class="hljs-keyword">import</span> urandom<br><span class="hljs-comment"># 从base64模块导入b64encode函数，用于对字节串进行base64编码</span><br><span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64encode<br><br><span class="hljs-comment"># 定义Encrypt函数，参数为消息msg和密钥key</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">Encrypt</span>(<span class="hljs-params">msg, key</span>):<br>    <span class="hljs-comment"># 获取密钥的长度</span><br>    Lenth = <span class="hljs-built_in">len</span>(key)<br>    <span class="hljs-comment"># 初始化结果字符串</span><br>    result = <span class="hljs-string">&#x27;&#x27;</span><br><br>    <span class="hljs-comment"># 定义大写字母和小写字母的起始ASCII值</span><br>    upper_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>)<br>    lower_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)<br>    <span class="hljs-comment"># 将密钥转换为大写，并将每个字符转换为其对应的ASCII值减去&#x27;A&#x27;的ASCII值</span><br>    KEY = [<span class="hljs-built_in">ord</span>(key.upper()[_]) - upper_base <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(Lenth)]<br><br>    <span class="hljs-comment"># 初始化索引</span><br>    index = <span class="hljs-number">0</span><br>    <span class="hljs-comment"># 遍历消息中的每个字符</span><br>    <span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> msg:<br>        <span class="hljs-comment"># 获取当前密钥字符对应的ASCII值</span><br>        tmp_key = KEY[index % Lenth] <br>        <span class="hljs-comment"># 如果当前字符不是字母，则直接添加到结果字符串</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> m.isalpha():<br>            result += m<br>            <span class="hljs-keyword">continue</span><br><br>        <span class="hljs-comment"># 如果当前字符是大写字母，进行加密</span><br>        <span class="hljs-keyword">if</span> m.isupper(): <br>            result += <span class="hljs-built_in">chr</span>(upper_base + (<span class="hljs-built_in">ord</span>(m) - upper_base + tmp_key) % <span class="hljs-number">26</span>)<br>        <span class="hljs-comment"># 如果当前字符是小写字母，进行加密</span><br>        <span class="hljs-keyword">else</span>: <br>            result += <span class="hljs-built_in">chr</span>(lower_base + (<span class="hljs-built_in">ord</span>(m) - lower_base + tmp_key) % <span class="hljs-number">26</span>)<br>        <span class="hljs-comment"># 索引增加</span><br>        index += <span class="hljs-number">1</span><br>    <span class="hljs-comment"># 返回加密后的结果字符串</span><br>    <span class="hljs-keyword">return</span> result<br><br><span class="hljs-comment"># 生成随机密钥，长度为6字节，然后进行base64编码，取前5个字符作为密钥</span><br>key = b64encode(urandom(<span class="hljs-number">6</span>))[:<span class="hljs-number">5</span>].decode()<br><span class="hljs-comment"># 使用生成的密钥加密flag，并打印加密后的结果</span><br><span class="hljs-built_in">print</span>(Encrypt(flag,key))<br><span class="hljs-comment"># 注释中的字符串是加密后的flag为：</span><br><span class="hljs-comment"># 0lCcop&#123;oyd94092-g8mq-4963-88b6-4helrxdhm6q7&#125;</span><br></code></pre></td></tr></table></figure></li>
-<li>分析：为了找出flag，首先我们需要5个字符的密钥，然后使用这个密钥对加密后的字符串进行解密。<br>由于我们确定题解的格式是0XGame{}，所以我们可以通过前五个字母的明文与密文的对应关系来推断出密钥。下面通过编程实现密钥的推断：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">calculate_key</span>(<span class="hljs-params">pt, ct</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    根据给定的明文和密文,计算Vigenère密码的密钥。</span><br><span class="hljs-string">    参数:</span><br><span class="hljs-string">    pt (str): 明文字符串。</span><br><span class="hljs-string">    ct (str): 密文字符串。</span><br><span class="hljs-string">    返回:</span><br><span class="hljs-string">    str: 计算出的密钥字符串。</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    key = []  <span class="hljs-comment"># 初始化密钥列表，用于存储每个字符的密钥偏移量</span><br>    upper_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>)  <span class="hljs-comment"># 大写字母的ASCII起始值</span><br>    lower_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)  <span class="hljs-comment"># 小写字母的ASCII起始值</span><br>    <span class="hljs-comment"># 遍历明文和密文的每个字符</span><br>    <span class="hljs-keyword">for</span> p, c <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(pt, ct):<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> p.isalpha():  <span class="hljs-comment"># 跳过非字母字符</span><br>            <span class="hljs-keyword">continue</span><br>        <span class="hljs-keyword">if</span> p.isupper():  <span class="hljs-comment"># 如果字符是大写字母</span><br>            p_val = <span class="hljs-built_in">ord</span>(p) - upper_base  <span class="hljs-comment"># 将字符转换为0-25的数值</span><br>            c_val = <span class="hljs-built_in">ord</span>(c) - upper_base  <span class="hljs-comment"># 同上</span><br>        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 如果字符是小写字母</span><br>            p_val = <span class="hljs-built_in">ord</span>(p) - lower_base<br>            c_val = <span class="hljs-built_in">ord</span>(c) - lower_base<br>        <span class="hljs-comment"># 计算密钥偏移量，使用模26确保结果在0-25之间</span><br>        key_offset = (c_val - p_val) % <span class="hljs-number">26</span><br>        <span class="hljs-comment"># 将偏移量转换回大写字母，并添加到密钥列表中</span><br>        key.append(<span class="hljs-built_in">chr</span>(upper_base + key_offset))<br>    <span class="hljs-comment"># 将密钥列表连接成字符串并返回</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#x27;</span>.join(key)<br><span class="hljs-comment"># 给定的明文和密文</span><br>plaintext = <span class="hljs-string">&#x27;0xGame&#x27;</span><br>ciphertext = <span class="hljs-string">&#x27;0lCcop&#x27;</span><br><span class="hljs-comment"># 移除明文中的非字母字符</span><br>plaintext = <span class="hljs-string">&#x27;&#x27;</span>.join(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.isalpha, plaintext))<br>ciphertext = <span class="hljs-string">&#x27;&#x27;</span>.join(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.isalpha, ciphertext))<br><span class="hljs-comment"># 确保明文和密文长度相同</span><br><span class="hljs-keyword">assert</span> <span class="hljs-built_in">len</span>(plaintext) == <span class="hljs-built_in">len</span>(ciphertext)<br><span class="hljs-comment"># 计算密钥</span><br>key = calculate_key(plaintext, ciphertext)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;key =&quot;</span>, key)<br></code></pre></td></tr></table></figure>
-编译运行结果如下：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052891.png" alt="alt text"><br>key &#x3D; OWCCL</li>
-<li>使用密钥解密加密后的字符串：<br>搜索得到Vigenere加密解密在线工具：<a target="_blank" rel="noopener" href="https://ctf.bugku.com/tool/vigenere">https://ctf.bugku.com/tool/vigenere</a><br>利用key &#x3D; OWCCL进行解密，得到flag：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052892.png" alt="alt text"></li>
-<li>得到flag:</li>
+<h4 id="Code-Vigenere">Code-Vigenere</h4>
+<ol>
+<li>给了一段代码，尝试理解并补充注释如下</li>
 </ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 从secret模块导入flag变量</span>
+<span class="hljs-keyword">from</span> secret <span class="hljs-keyword">import</span> flag
+<span class="hljs-comment"># 从os模块导入urandom函数，用于生成随机字节串</span>
+<span class="hljs-keyword">from</span> os <span class="hljs-keyword">import</span> urandom
+<span class="hljs-comment"># 从base64模块导入b64encode函数，用于对字节串进行base64编码</span>
+<span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64encode
+
+<span class="hljs-comment"># 定义Encrypt函数，参数为消息msg和密钥key</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">Encrypt</span>(<span class="hljs-params">msg, key</span>):
+    <span class="hljs-comment"># 获取密钥的长度</span>
+    Lenth = <span class="hljs-built_in">len</span>(key)
+    <span class="hljs-comment"># 初始化结果字符串</span>
+    result = <span class="hljs-string">&#x27;&#x27;</span>
+
+    <span class="hljs-comment"># 定义大写字母和小写字母的起始ASCII值</span>
+    upper_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>)
+    lower_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)
+    <span class="hljs-comment"># 将密钥转换为大写，并将每个字符转换为其对应的ASCII值减去&#x27;A&#x27;的ASCII值</span>
+    KEY = [<span class="hljs-built_in">ord</span>(key.upper()[_]) - upper_base <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(Lenth)]
+
+    <span class="hljs-comment"># 初始化索引</span>
+    index = <span class="hljs-number">0</span>
+    <span class="hljs-comment"># 遍历消息中的每个字符</span>
+    <span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> msg:
+        <span class="hljs-comment"># 获取当前密钥字符对应的ASCII值</span>
+        tmp_key = KEY[index % Lenth] 
+        <span class="hljs-comment"># 如果当前字符不是字母，则直接添加到结果字符串</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> m.isalpha():
+            result += m
+            <span class="hljs-keyword">continue</span>
+
+        <span class="hljs-comment"># 如果当前字符是大写字母，进行加密</span>
+        <span class="hljs-keyword">if</span> m.isupper(): 
+            result += <span class="hljs-built_in">chr</span>(upper_base + (<span class="hljs-built_in">ord</span>(m) - upper_base + tmp_key) % <span class="hljs-number">26</span>)
+        <span class="hljs-comment"># 如果当前字符是小写字母，进行加密</span>
+        <span class="hljs-keyword">else</span>: 
+            result += <span class="hljs-built_in">chr</span>(lower_base + (<span class="hljs-built_in">ord</span>(m) - lower_base + tmp_key) % <span class="hljs-number">26</span>)
+        <span class="hljs-comment"># 索引增加</span>
+        index += <span class="hljs-number">1</span>
+    <span class="hljs-comment"># 返回加密后的结果字符串</span>
+    <span class="hljs-keyword">return</span> result
+
+<span class="hljs-comment"># 生成随机密钥，长度为6字节，然后进行base64编码，取前5个字符作为密钥</span>
+key = b64encode(urandom(<span class="hljs-number">6</span>))[:<span class="hljs-number">5</span>].decode()
+<span class="hljs-comment"># 使用生成的密钥加密flag，并打印加密后的结果</span>
+<span class="hljs-built_in">print</span>(Encrypt(flag,key))
+<span class="hljs-comment"># 注释中的字符串是加密后的flag为：</span>
+<span class="hljs-comment"># 0lCcop&#123;oyd94092-g8mq-4963-88b6-4helrxdhm6q7&#125;</span></code></pre></div>
+<ol start="2">
+<li>分析：为了找出flag，首先我们需要5个字符的密钥，然后使用这个密钥对加密后的字符串进行解密。<br>
+由于我们确定题解的格式是0XGame{}，所以我们可以通过前五个字母的明文与密文的对应关系来推断出密钥。下面通过编程实现密钥的推断：</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">calculate_key</span>(<span class="hljs-params">pt, ct</span>):
+    <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">    根据给定的明文和密文,计算Vigenère密码的密钥。</span>
+<span class="hljs-string">    参数:</span>
+<span class="hljs-string">    pt (str): 明文字符串。</span>
+<span class="hljs-string">    ct (str): 密文字符串。</span>
+<span class="hljs-string">    返回:</span>
+<span class="hljs-string">    str: 计算出的密钥字符串。</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    key = []  <span class="hljs-comment"># 初始化密钥列表，用于存储每个字符的密钥偏移量</span>
+    upper_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;A&#x27;</span>)  <span class="hljs-comment"># 大写字母的ASCII起始值</span>
+    lower_base = <span class="hljs-built_in">ord</span>(<span class="hljs-string">&#x27;a&#x27;</span>)  <span class="hljs-comment"># 小写字母的ASCII起始值</span>
+    <span class="hljs-comment"># 遍历明文和密文的每个字符</span>
+    <span class="hljs-keyword">for</span> p, c <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(pt, ct):
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> p.isalpha():  <span class="hljs-comment"># 跳过非字母字符</span>
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">if</span> p.isupper():  <span class="hljs-comment"># 如果字符是大写字母</span>
+            p_val = <span class="hljs-built_in">ord</span>(p) - upper_base  <span class="hljs-comment"># 将字符转换为0-25的数值</span>
+            c_val = <span class="hljs-built_in">ord</span>(c) - upper_base  <span class="hljs-comment"># 同上</span>
+        <span class="hljs-keyword">else</span>:  <span class="hljs-comment"># 如果字符是小写字母</span>
+            p_val = <span class="hljs-built_in">ord</span>(p) - lower_base
+            c_val = <span class="hljs-built_in">ord</span>(c) - lower_base
+        <span class="hljs-comment"># 计算密钥偏移量，使用模26确保结果在0-25之间</span>
+        key_offset = (c_val - p_val) % <span class="hljs-number">26</span>
+        <span class="hljs-comment"># 将偏移量转换回大写字母，并添加到密钥列表中</span>
+        key.append(<span class="hljs-built_in">chr</span>(upper_base + key_offset))
+    <span class="hljs-comment"># 将密钥列表连接成字符串并返回</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#x27;</span>.join(key)
+<span class="hljs-comment"># 给定的明文和密文</span>
+plaintext = <span class="hljs-string">&#x27;0xGame&#x27;</span>
+ciphertext = <span class="hljs-string">&#x27;0lCcop&#x27;</span>
+<span class="hljs-comment"># 移除明文中的非字母字符</span>
+plaintext = <span class="hljs-string">&#x27;&#x27;</span>.join(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.isalpha, plaintext))
+ciphertext = <span class="hljs-string">&#x27;&#x27;</span>.join(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.isalpha, ciphertext))
+<span class="hljs-comment"># 确保明文和密文长度相同</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-built_in">len</span>(plaintext) == <span class="hljs-built_in">len</span>(ciphertext)
+<span class="hljs-comment"># 计算密钥</span>
+key = calculate_key(plaintext, ciphertext)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;key =&quot;</span>, key)</code></pre></div>
+<p>编译运行结果如下：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052891.png" alt="alt text"><br>
+key = OWCCL<br>
+3. 使用密钥解密加密后的字符串：<br>
+搜索得到Vigenere加密解密在线工具：<a target="_blank" rel="noopener" href="https://ctf.bugku.com/tool/vigenere">https://ctf.bugku.com/tool/vigenere</a><br>
+利用key = OWCCL进行解密，得到flag：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052892.png" alt="alt text"><br>
+4. 得到flag:</p>
 <p>0xGame{acb94092-e8bc-4963-88f6-4fcadbbfb6c7}</p>
-<h4 id="RSA-Baby"><a href="#RSA-Baby" class="headerlink" title="RSA-Baby"></a>RSA-Baby</h4><ol>
-<li>给了一段代码，尝试理解并补充注释如下<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> bytes_to_long, getPrime  <span class="hljs-comment"># 导入Crypto.Util.number模块中的bytes_to_long和getPrime函数</span><br><span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> md5  <span class="hljs-comment"># 导入哈希库中的md5函数，用于生成哈希值</span><br><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint  <span class="hljs-comment"># 导入随机数生成函数，用于生成随机数</span><br><span class="hljs-keyword">from</span> gmpy2 <span class="hljs-keyword">import</span> invert, gcd  <span class="hljs-comment"># 导入gmpy2库中的invert和gcd函数，用于计算模逆和最大公约数</span><br><span class="hljs-comment"># 定义MD5哈希函数，用于生成输入m的MD5哈希值</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">MD5</span>(<span class="hljs-params">m</span>):<br>    <span class="hljs-keyword">return</span> md5(<span class="hljs-built_in">str</span>(m).encode()).hexdigest()<br><span class="hljs-comment"># 定义RSA密钥生成函数，用于生成公钥和私钥</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">KeyGen</span>():<br>    Factor_BitLength = <span class="hljs-number">30</span>  <span class="hljs-comment"># 定义素数因子的位数，这里设置为30位</span><br>    q = getPrime(Factor_BitLength)  <span class="hljs-comment"># 生成一个30位的素数q</span><br>    p = getPrime(Factor_BitLength)  <span class="hljs-comment"># 生成一个30位的素数p</span><br>    N = p * q  <span class="hljs-comment"># 计算N，即公钥和私钥的模数，N=p*q</span><br>    <span class="hljs-comment"># 计算欧拉函数值phi(N)，用于生成公钥和私钥</span><br>    phi = (p-<span class="hljs-number">1</span>) * (q-<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 生成公钥和私钥</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        e = randint(<span class="hljs-number">1</span>, phi)  <span class="hljs-comment"># 在1到phi之间随机选择一个整数e</span><br>        <span class="hljs-keyword">if</span> gcd(e, phi) == <span class="hljs-number">1</span>:  <span class="hljs-comment"># 如果e和phi互质，则e可以作为公钥的一部分</span><br>            d = <span class="hljs-built_in">int</span>(invert(e, phi))  <span class="hljs-comment"># 计算d，即私钥的一部分，d是e模phi的逆元</span><br>            <span class="hljs-keyword">break</span><br>    <span class="hljs-comment"># 生成公钥和私钥，并返回</span><br>    Pub_Key = (N, e)  <span class="hljs-comment"># 公钥由模数N和加密指数e组成</span><br>    Prv_Key = (N, d)  <span class="hljs-comment"># 私钥由模数N和解密指数d组成</span><br>    <span class="hljs-keyword">return</span> Pub_Key, Prv_Key<br><span class="hljs-comment"># 调用KeyGen函数生成公钥和私钥</span><br>Pub, Prv = KeyGen()<br><span class="hljs-comment"># 提取公钥和私钥的参数</span><br>N = Pub[<span class="hljs-number">0</span>]  <span class="hljs-comment"># 提取公钥的模数N</span><br>e = Pub[<span class="hljs-number">1</span>]  <span class="hljs-comment"># 提取公钥的加密指数e</span><br>d = Prv[<span class="hljs-number">1</span>]  <span class="hljs-comment"># 提取私钥的解密指数d</span><br><span class="hljs-comment"># RSA加密过程，生成随机消息m并加密</span><br>m = randint(<span class="hljs-number">1</span>, N)  <span class="hljs-comment"># 在1到N之间随机生成一个整数m作为消息</span><br>c = <span class="hljs-built_in">pow</span>(m, e, N)  <span class="hljs-comment"># 使用公钥(N, e)加密消息m，得到密文c</span><br><span class="hljs-comment"># 打印公钥、私钥和加密后的消息</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Pub_Key = <span class="hljs-subst">&#123;Pub&#125;</span>&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Prv_Key = <span class="hljs-subst">&#123;Prv&#125;</span>&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Encrypt_msg = <span class="hljs-subst">&#123;c&#125;</span>&#x27;</span>)<br><span class="hljs-comment"># 假设已知加密消息c的值，这里给出示例值</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Pub_Key = (547938466798424179, 80644065229241095)</span><br><span class="hljs-string">Prv_Key = (547938466798424179, 488474228706714247)</span><br><span class="hljs-string">Encrypt_msg = 344136655393256706</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-comment"># 使用MD5函数计算原始消息m的MD5哈希值，并构造flag</span><br>flag = <span class="hljs-string">&#x27;0xGame&#123;&#x27;</span> + MD5(m) + <span class="hljs-string">&#x27;&#125;&#x27;</span><br></code></pre></td></tr></table></figure></li>
-<li>分析：我们可以首先使用RSA解密公式$m &#x3D; c^dmodN$<br> 来解密密文 c，得到原始消息 m。然后，我们计算 m 的MD5哈希值，并将其拼接到固定的字符串 ‘0xGame{‘ 后面，形成最终的flag，实现代码如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes<br><span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> md5<br><span class="hljs-comment"># 已知的值</span><br>N = <span class="hljs-number">547938466798424179</span><br>d = <span class="hljs-number">488474228706714247</span><br>c = <span class="hljs-number">344136655393256706</span><br><span class="hljs-comment"># RSA 解密</span><br>m = <span class="hljs-built_in">pow</span>(c, d, N)<br><span class="hljs-comment"># 计算m的MD5哈希值</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">MD5</span>(<span class="hljs-params">m</span>):<br>    <span class="hljs-keyword">return</span> md5(<span class="hljs-built_in">str</span>(m).encode()).hexdigest()<br>m_hash = MD5(m)<br><span class="hljs-comment"># 构造flag</span><br>flag = <span class="hljs-string">&#x27;0xGame&#123;&#x27;</span> + m_hash + <span class="hljs-string">&#x27;&#125;&#x27;</span><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
-编译运行结果如下：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052894.png" alt="alt text"></li>
-<li>得到flag：<br>0xGame{6e5719c54cdde25ce7124e280803f938}</li>
+<h4 id="RSA-Baby">RSA-Baby</h4>
+<ol>
+<li>给了一段代码，尝试理解并补充注释如下</li>
 </ol>
-<h3 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h3><h4 id="test-your-nc"><a href="#test-your-nc" class="headerlink" title="test your nc"></a>test your nc</h4><ol>
-<li><p>“Prepare your netcat. Connect to server then you will get your first flag. nc 47.97.58.52 40000”由题目下载好netcat</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> bytes_to_long, getPrime  <span class="hljs-comment"># 导入Crypto.Util.number模块中的bytes_to_long和getPrime函数</span>
+<span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> md5  <span class="hljs-comment"># 导入哈希库中的md5函数，用于生成哈希值</span>
+<span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint  <span class="hljs-comment"># 导入随机数生成函数，用于生成随机数</span>
+<span class="hljs-keyword">from</span> gmpy2 <span class="hljs-keyword">import</span> invert, gcd  <span class="hljs-comment"># 导入gmpy2库中的invert和gcd函数，用于计算模逆和最大公约数</span>
+<span class="hljs-comment"># 定义MD5哈希函数，用于生成输入m的MD5哈希值</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">MD5</span>(<span class="hljs-params">m</span>):
+    <span class="hljs-keyword">return</span> md5(<span class="hljs-built_in">str</span>(m).encode()).hexdigest()
+<span class="hljs-comment"># 定义RSA密钥生成函数，用于生成公钥和私钥</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">KeyGen</span>():
+    Factor_BitLength = <span class="hljs-number">30</span>  <span class="hljs-comment"># 定义素数因子的位数，这里设置为30位</span>
+    q = getPrime(Factor_BitLength)  <span class="hljs-comment"># 生成一个30位的素数q</span>
+    p = getPrime(Factor_BitLength)  <span class="hljs-comment"># 生成一个30位的素数p</span>
+    N = p * q  <span class="hljs-comment"># 计算N，即公钥和私钥的模数，N=p*q</span>
+    <span class="hljs-comment"># 计算欧拉函数值phi(N)，用于生成公钥和私钥</span>
+    phi = (p-<span class="hljs-number">1</span>) * (q-<span class="hljs-number">1</span>)
+    <span class="hljs-comment"># 生成公钥和私钥</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+        e = randint(<span class="hljs-number">1</span>, phi)  <span class="hljs-comment"># 在1到phi之间随机选择一个整数e</span>
+        <span class="hljs-keyword">if</span> gcd(e, phi) == <span class="hljs-number">1</span>:  <span class="hljs-comment"># 如果e和phi互质，则e可以作为公钥的一部分</span>
+            d = <span class="hljs-built_in">int</span>(invert(e, phi))  <span class="hljs-comment"># 计算d，即私钥的一部分，d是e模phi的逆元</span>
+            <span class="hljs-keyword">break</span>
+    <span class="hljs-comment"># 生成公钥和私钥，并返回</span>
+    Pub_Key = (N, e)  <span class="hljs-comment"># 公钥由模数N和加密指数e组成</span>
+    Prv_Key = (N, d)  <span class="hljs-comment"># 私钥由模数N和解密指数d组成</span>
+    <span class="hljs-keyword">return</span> Pub_Key, Prv_Key
+<span class="hljs-comment"># 调用KeyGen函数生成公钥和私钥</span>
+Pub, Prv = KeyGen()
+<span class="hljs-comment"># 提取公钥和私钥的参数</span>
+N = Pub[<span class="hljs-number">0</span>]  <span class="hljs-comment"># 提取公钥的模数N</span>
+e = Pub[<span class="hljs-number">1</span>]  <span class="hljs-comment"># 提取公钥的加密指数e</span>
+d = Prv[<span class="hljs-number">1</span>]  <span class="hljs-comment"># 提取私钥的解密指数d</span>
+<span class="hljs-comment"># RSA加密过程，生成随机消息m并加密</span>
+m = randint(<span class="hljs-number">1</span>, N)  <span class="hljs-comment"># 在1到N之间随机生成一个整数m作为消息</span>
+c = <span class="hljs-built_in">pow</span>(m, e, N)  <span class="hljs-comment"># 使用公钥(N, e)加密消息m，得到密文c</span>
+<span class="hljs-comment"># 打印公钥、私钥和加密后的消息</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Pub_Key = <span class="hljs-subst">&#123;Pub&#125;</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Prv_Key = <span class="hljs-subst">&#123;Prv&#125;</span>&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Encrypt_msg = <span class="hljs-subst">&#123;c&#125;</span>&#x27;</span>)
+<span class="hljs-comment"># 假设已知加密消息c的值，这里给出示例值</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">Pub_Key = (547938466798424179, 80644065229241095)</span>
+<span class="hljs-string">Prv_Key = (547938466798424179, 488474228706714247)</span>
+<span class="hljs-string">Encrypt_msg = 344136655393256706</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-comment"># 使用MD5函数计算原始消息m的MD5哈希值，并构造flag</span>
+flag = <span class="hljs-string">&#x27;0xGame&#123;&#x27;</span> + MD5(m) + <span class="hljs-string">&#x27;&#125;&#x27;</span></code></pre></div>
+<ol start="2">
+<li>分析：我们可以首先使用RSA解密公式<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><msup><mi>c</mi><mi>d</mi></msup><mi>m</mi><mi>o</mi><mi>d</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">m = c^dmodN</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span></span></span></span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span><br>
+来解密密文 c，得到原始消息 m。然后，我们计算 m 的MD5哈希值，并将其拼接到固定的字符串 ‘0xGame{’ 后面，形成最终的flag，实现代码如下：</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes
+<span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> md5
+<span class="hljs-comment"># 已知的值</span>
+N = <span class="hljs-number">547938466798424179</span>
+d = <span class="hljs-number">488474228706714247</span>
+c = <span class="hljs-number">344136655393256706</span>
+<span class="hljs-comment"># RSA 解密</span>
+m = <span class="hljs-built_in">pow</span>(c, d, N)
+<span class="hljs-comment"># 计算m的MD5哈希值</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">MD5</span>(<span class="hljs-params">m</span>):
+    <span class="hljs-keyword">return</span> md5(<span class="hljs-built_in">str</span>(m).encode()).hexdigest()
+m_hash = MD5(m)
+<span class="hljs-comment"># 构造flag</span>
+flag = <span class="hljs-string">&#x27;0xGame&#123;&#x27;</span> + m_hash + <span class="hljs-string">&#x27;&#125;&#x27;</span>
+<span class="hljs-built_in">print</span>(flag)</code></pre></div>
+<p>编译运行结果如下：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052894.png" alt="alt text"><br>
+3. 得到flag：<br>
+0xGame{6e5719c54cdde25ce7124e280803f938}</p>
+<h3 id="Pwn">Pwn</h3>
+<h4 id="test-your-nc">test your nc</h4>
+<ol>
+<li>
+<p>“Prepare your netcat. Connect to server then you will get your first flag. nc 47.97.58.52 40000”由题目下载好netcat</p>
 </li>
-<li><p>cmd运行nercat连接到服务器的结果：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052895.png" alt="alt text"></p>
+<li>
+<p>cmd运行nercat连接到服务器的结果：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052895.png" alt="alt text"></p>
 </li>
-<li><p>得到flag：</p>
-<p> 0xGame{928bb261-0a63-4389-b629-4d1f2f449848}</p>
+<li>
+<p>得到flag：</p>
+<p>0xGame{928bb261-0a63-4389-b629-4d1f2f449848}</p>
 </li>
 </ol>
-<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><h4 id="ez-login"><a href="#ez-login" class="headerlink" title="ez_login"></a>ez_login</h4><ol>
-<li><p>题目给出一个网站<a target="_blank" rel="noopener" href="http://47.76.151.192:60084/">http://47.76.151.192:60084</a><br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052896.png" alt="alt text"></p>
+<h3 id="Web">Web</h3>
+<h4 id="ez-login">ez_login</h4>
+<ol>
+<li>
+<p>题目给出一个网站<a target="_blank" rel="noopener" href="http://47.76.151.192:60084">http://47.76.151.192:60084</a><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052896.png" alt="alt text"></p>
 </li>
-<li><p>分析：有两个输入框，尝试使用burpsuite的intruder进行弱口令爆破密码：</p>
+<li>
+<p>分析：有两个输入框，尝试使用burpsuite的intruder进行弱口令爆破密码：</p>
 </li>
-<li><p>首先用burpsuite内嵌浏览器访问网站，然后任意填写username和password点击login，抓包拦截：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052897.png" alt="alt text"><br>不妨猜测用户名为admin，添加payload位置到password，然后点击attack进行爆破：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052899.png" alt="alt text"><br>爆破得到密码为admin123</p>
+<li>
+<p>首先用burpsuite内嵌浏览器访问网站，然后任意填写username和password点击login，抓包拦截：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052897.png" alt="alt text"><br>
+不妨猜测用户名为admin，添加payload位置到password，然后点击attack进行爆破：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052899.png" alt="alt text"><br>
+爆破得到密码为admin123</p>
 </li>
-<li><p>利用得到的用户名和密码登录网站，得到flag：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052900.png"></p>
+<li>
+<p>利用得到的用户名和密码登录网站，得到flag：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052900.png" alt=""></p>
 </li>
-<li><p>flag:</p>
-<p> 0xGame{It_Is_Easy_Right?}</p>
-</li>
-</ol>
-<h4 id="hello-http"><a href="#hello-http" class="headerlink" title="hello_http"></a>hello_http</h4><ol>
-<li><p>题目给出一个网站<a target="_blank" rel="noopener" href="http://8.130.84.100:50002/%EF%BC%9A">http://8.130.84.100:50002/：</a><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052901.png" alt="alt text"></p>
-</li>
-<li><p>分析：尝试通过修改请求包伪装成xlcBrowser浏览器:python爬虫代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-comment"># 目标URL</span><br>url = <span class="hljs-string">&#x27;http://8.130.84.100:50002/&#x27;</span><br><span class="hljs-comment"># 伪装成x1cBrowser的headers</span><br>headers = &#123;<br>    <span class="hljs-string">&#x27;User-Agent&#x27;</span>: <span class="hljs-string">&#x27;x1cBrowser&#x27;</span>,<br>&#125;<br><span class="hljs-comment"># 发送POST请求</span><br>response = requests.post(url, headers=headers)<br><span class="hljs-comment"># 打印响应内容</span><br><span class="hljs-built_in">print</span>(response.text)<br></code></pre></td></tr></table></figure></li>
-<li><p>运行结果如下：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052903.png" alt="alt text"><br>于是用get方式传递hello&#x3D;world</p>
-</li>
-<li><p>此次类推，每一步修改都按照运行的结果进行：得到最终的代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-comment"># 目标URL</span><br>url = <span class="hljs-string">&#x27;http://8.130.84.100:50002/&#x27;</span><br><span class="hljs-comment"># 伪装成x1cBrowser的headers</span><br>headers = &#123;<br>    <span class="hljs-string">&#x27;User-Agent&#x27;</span>: <span class="hljs-string">&#x27;x1cBrowser&#x27;</span>,<br>    <span class="hljs-string">&#x27;Referer&#x27;</span>: <span class="hljs-string">&#x27;http://localhost:8080/&#x27;</span>,<br>    <span class="hljs-string">&#x27;X-Forwarded-For&#x27;</span>: <span class="hljs-string">&#x27;127.0.0.1&#x27;</span><br>&#125;<br><span class="hljs-comment"># GET请求的参数</span><br>params = &#123;<br>    <span class="hljs-string">&#x27;hello&#x27;</span>: <span class="hljs-string">&#x27;world&#x27;</span><br>&#125;<br><span class="hljs-comment"># POST请求的参数</span><br>data = &#123;<br>    <span class="hljs-string">&#x27;web&#x27;</span>: <span class="hljs-string">&#x27;security&#x27;</span><br>&#125;<br><span class="hljs-comment"># 设置cookie</span><br>cookies = &#123;<br>    <span class="hljs-string">&#x27;flag&#x27;</span>: <span class="hljs-string">&#x27;secret&#x27;</span><br>&#125;<br><span class="hljs-comment"># 发送POST请求</span><br>response = requests.post(url, headers=headers, data=data,params=params, cookies=cookies)<br><span class="hljs-comment"># 打印响应内容</span><br><span class="hljs-built_in">print</span>(response.text)<br></code></pre></td></tr></table></figure></li>
-<li><p>运行结果如下：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052904.png" alt="alt text"></p>
-</li>
-<li><p>得到flag：</p>
-<p> 0xgame{1cd6a904-725f-11ef-aafb-d4d8533ec05c}</p>
+<li>
+<p>flag:</p>
+<p>0xGame{It_Is_Easy_Right?}</p>
 </li>
 </ol>
-<h4 id="hello-web"><a href="#hello-web" class="headerlink" title="hello_web"></a>hello_web</h4><ol>
-<li>题目给出一个网站Flag<br><a target="_blank" rel="noopener" href="http://8.130.84.100:50001/">http://8.130.84.100:50001/</a><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052905.png" alt="alt text"></li>
-<li>首先考虑查看源代码，发现右键后不行确定解题方向：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052906.png" alt="alt text"></li>
+<h4 id="hello-http">hello_http</h4>
+<ol>
+<li>题目给出一个网站<a target="_blank" rel="noopener" href="http://8.130.84.100:50002/%EF%BC%9A">http://8.130.84.100:50002/：</a><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052901.png" alt="alt text"></li>
+<li>分析：尝试通过修改请求包伪装成xlcBrowser浏览器:python爬虫代码如下：</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+<span class="hljs-comment"># 目标URL</span>
+url = <span class="hljs-string">&#x27;http://8.130.84.100:50002/&#x27;</span>
+<span class="hljs-comment"># 伪装成x1cBrowser的headers</span>
+headers = &#123;
+    <span class="hljs-string">&#x27;User-Agent&#x27;</span>: <span class="hljs-string">&#x27;x1cBrowser&#x27;</span>,
+&#125;
+<span class="hljs-comment"># 发送POST请求</span>
+response = requests.post(url, headers=headers)
+<span class="hljs-comment"># 打印响应内容</span>
+<span class="hljs-built_in">print</span>(response.text)</code></pre></div>
+<ol start="3">
+<li>运行结果如下：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052903.png" alt="alt text"><br>
+于是用get方式传递hello=world</li>
+<li>此次类推，每一步修改都按照运行的结果进行：得到最终的代码：</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+<span class="hljs-comment"># 目标URL</span>
+url = <span class="hljs-string">&#x27;http://8.130.84.100:50002/&#x27;</span>
+<span class="hljs-comment"># 伪装成x1cBrowser的headers</span>
+headers = &#123;
+    <span class="hljs-string">&#x27;User-Agent&#x27;</span>: <span class="hljs-string">&#x27;x1cBrowser&#x27;</span>,
+    <span class="hljs-string">&#x27;Referer&#x27;</span>: <span class="hljs-string">&#x27;http://localhost:8080/&#x27;</span>,
+    <span class="hljs-string">&#x27;X-Forwarded-For&#x27;</span>: <span class="hljs-string">&#x27;127.0.0.1&#x27;</span>
+&#125;
+<span class="hljs-comment"># GET请求的参数</span>
+params = &#123;
+    <span class="hljs-string">&#x27;hello&#x27;</span>: <span class="hljs-string">&#x27;world&#x27;</span>
+&#125;
+<span class="hljs-comment"># POST请求的参数</span>
+data = &#123;
+    <span class="hljs-string">&#x27;web&#x27;</span>: <span class="hljs-string">&#x27;security&#x27;</span>
+&#125;
+<span class="hljs-comment"># 设置cookie</span>
+cookies = &#123;
+    <span class="hljs-string">&#x27;flag&#x27;</span>: <span class="hljs-string">&#x27;secret&#x27;</span>
+&#125;
+<span class="hljs-comment"># 发送POST请求</span>
+response = requests.post(url, headers=headers, data=data,params=params, cookies=cookies)
+<span class="hljs-comment"># 打印响应内容</span>
+<span class="hljs-built_in">print</span>(response.text)</code></pre></div>
+<ol start="5">
+<li>
+<p>运行结果如下：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052904.png" alt="alt text"></p>
+</li>
+<li>
+<p>得到flag：</p>
+<p>0xgame{1cd6a904-725f-11ef-aafb-d4d8533ec05c}</p>
+</li>
+</ol>
+<h4 id="hello-web">hello_web</h4>
+<ol>
+<li>题目给出一个网站Flag<br>
+<a target="_blank" rel="noopener" href="http://8.130.84.100:50001/">http://8.130.84.100:50001/</a><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052905.png" alt="alt text"></li>
+<li>首先考虑查看源代码，发现右键后不行确定解题方向：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052906.png" alt="alt text"></li>
 <li>尝试F12也不行<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052907.png" alt="alt text"></li>
-<li>尝试Ctrl+U查看源代码：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052908.png"></li>
-<li>源代码中得到flag前半段：0xGame{ee7f2040-1987-4e0a<br>提示查看：“看看f14g.php”</li>
-<li>所以考虑利用wireshark抓包查看请求包：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052909.png" alt="alt text"><br>找到flag后半段：-872d-68589c4ab3d3}</li>
+<li>尝试Ctrl+U查看源代码：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052908.png" alt=""></li>
+<li>源代码中得到flag前半段：0xGame{ee7f2040-1987-4e0a<br>
+提示查看：“看看f14g.php”</li>
+<li>所以考虑利用wireshark抓包查看请求包：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052909.png" alt="alt text"><br>
+找到flag后半段：-872d-68589c4ab3d3}</li>
 <li>合并得到flag：0xGame{ee7f2040-1987-4e0a-872d-68589c4ab3d3}</li>
 </ol>
-<h3 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h3><h4 id="BabyBase"><a href="#BabyBase" class="headerlink" title="BabyBase"></a>BabyBase</h4><ol>
-<li>题目给了一个BabyBase.exe文件，用Vscode中16进制编辑器查看：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052910.png"></li>
-<li>找到flag附近的可疑的连续可解码的base64编码的字符片段：<br>MHhHYW1le04wd195MHVfa24wd19CNHNlNjRfRW5jMGQxbmdfdzNsbCF9</li>
-<li>用base64在线解码工具进行解码：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052911.png" alt="alt text"></li>
-<li>得到flag：<br>0xGame{N0w_y0u_kn0w_B4se64_Enc0d1ng_w3ll!}</li>
+<h3 id="Reverse">Reverse</h3>
+<h4 id="BabyBase">BabyBase</h4>
+<ol>
+<li>题目给了一个BabyBase.exe文件，用Vscode中16进制编辑器查看：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052910.png" alt=""></li>
+<li>找到flag附近的可疑的连续可解码的base64编码的字符片段：<br>
+MHhHYW1le04wd195MHVfa24wd19CNHNlNjRfRW5jMGQxbmdfdzNsbCF9</li>
+<li>用base64在线解码工具进行解码：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052911.png" alt="alt text"></li>
+<li>得到flag：<br>
+0xGame{N0w_y0u_kn0w_B4se64_Enc0d1ng_w3ll!}</li>
 </ol>
-<h4 id="BinaryMaster"><a href="#BinaryMaster" class="headerlink" title="BinaryMaster"></a>BinaryMaster</h4><ol>
-<li>题目给了一个BinaryMaster.exe文件，用Vscode中16进制编辑器查看：找到flag：<br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052912.png" alt="alt text"></li>
+<h4 id="BinaryMaster">BinaryMaster</h4>
+<ol>
+<li>题目给了一个BinaryMaster.exe文件，用Vscode中16进制编辑器查看：找到flag：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052912.png" alt="alt text"></li>
 <li>flag：</li>
 </ol>
 <p>0xGame{114514cc-a3a7-4e36-8db1-5f224b776271}</p>
-<h4 id="SignSign"><a href="#SignSign" class="headerlink" title="SignSign"></a>SignSign</h4><ol>
-<li>题目给了一个Signin.exe文件，用Vscode中16进制编辑器查看：找到有关flag的片段：<br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052913.png" alt="alt text"><br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052914.png" alt="alt text"></li>
-<li>flag被分在了两个片段，将他们合并得到flag：<br>0xGame{S1gn1n_h3r3_4nd_b3g1n_Reversing_n0w}</li>
+<h4 id="SignSign">SignSign</h4>
+<ol>
+<li>题目给了一个Signin.exe文件，用Vscode中16进制编辑器查看：找到有关flag的片段：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052913.png" alt="alt text"><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052914.png" alt="alt text"></li>
+<li>flag被分在了两个片段，将他们合并得到flag：<br>
+0xGame{S1gn1n_h3r3_4nd_b3g1n_Reversing_n0w}</li>
 </ol>
-<h3 id="Blockchain"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain</h3><h4 id="肘，上链！"><a href="#肘，上链！" class="headerlink" title="肘，上链！"></a>肘，上链！</h4><ol>
-<li>题目给了服务器端口、rcp、水龙头地址：<br>nc 156.238.233.7 20000<br>rpc <a target="_blank" rel="noopener" href="http://156.238.233.7:8545/">http://156.238.233.7:8545</a><br>faucet 156.238.233.7:8080</li>
-<li>在metamask中连接到网络，创建一个账户，然后使用水龙头地址输入自己的地址获取一些以太币：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052915.png" alt="alt text"><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052917.png" alt="alt text"></li>
-<li>用netcat连接到服务器：<br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052918.png"><br> 按照要求给地址转账0.01个以太币：<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052919.png" alt="alt text"><br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052920.png"></li>
-<li>转账确认成功后，再次连接服务器进入第2步：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052921.png"></li>
-<li>要部署合约使得函数issolved()返回true，所以需要找到合约代码：再次连接服务器进入第4步查看合约代码：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052922.png" alt="alt text"></li>
-<li>用RemixIDE相应的版本编译合约代码：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052923.png" alt="alt text"></li>
-<li>输入合约地址：查看到两个函数<br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052924.png" alt="alt text"></li>
-<li>按照合约代码要求在sign函数右侧输入“Hello0xBlockchain”的256hash值，才能使issolved函数返回true，因此计算出hash值输入：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052925.png" alt="alt text"><br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052926.png" alt="alt text"></li>
-<li>选择metamask账户，并点击sign提交哈希值，完成交易后，然后点击issolved查看返回值已经为true：<br><img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052927.png" alt="alt text"></li>
-<li>然后再次连接服务器，进入第三步输入token得到flag：<br> <img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052928.png"></li>
-<li>flag：<br>0xGame{T3st1ng_ur_bl0ckcha1n!}</li>
+<h3 id="Blockchain">Blockchain</h3>
+<h4 id="肘，上链！">肘，上链！</h4>
+<ol>
+<li>题目给了服务器端口、rcp、水龙头地址：<br>
+nc 156.238.233.7 20000<br>
+rpc <a target="_blank" rel="noopener" href="http://156.238.233.7:8545">http://156.238.233.7:8545</a><br>
+faucet 156.238.233.7:8080</li>
+<li>在metamask中连接到网络，创建一个账户，然后使用水龙头地址输入自己的地址获取一些以太币：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052915.png" alt="alt text"><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052917.png" alt="alt text"></li>
+<li>用netcat连接到服务器：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052918.png" alt=""><br>
+按照要求给地址转账0.01个以太币：<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052919.png" alt="alt text"><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052920.png" alt=""></li>
+<li>转账确认成功后，再次连接服务器进入第2步：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052921.png" alt=""></li>
+<li>要部署合约使得函数issolved()返回true，所以需要找到合约代码：再次连接服务器进入第4步查看合约代码：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052922.png" alt="alt text"></li>
+<li>用RemixIDE相应的版本编译合约代码：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052923.png" alt="alt text"></li>
+<li>输入合约地址：查看到两个函数<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052924.png" alt="alt text"></li>
+<li>按照合约代码要求在sign函数右侧输入“Hello0xBlockchain”的256hash值，才能使issolved函数返回true，因此计算出hash值输入：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052925.png" alt="alt text"><br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052926.png" alt="alt text"></li>
+<li>选择metamask账户，并点击sign提交哈希值，完成交易后，然后点击issolved查看返回值已经为true：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052927.png" alt="alt text"></li>
+<li>然后再次连接服务器，进入第三步输入token得到flag：<br>
+<img src="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411071052928.png" alt=""></li>
+<li>flag：<br>
+0xGame{T3st1ng_ur_bl0ckcha1n!}</li>
 </ol>
 
                 
@@ -514,9 +866,21 @@
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="ND - 禁止演绎">
+                    <i class="iconfont icon-cc-nd"></i>
                   </span>
                 </a>
               
@@ -535,9 +899,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/07/0x0101/" title="hicancan的算法笔记0x0101">
+                      <a href="/2024/11/07/3_1/" title="由C语言实验报告引申的有趣极限题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hicancan的算法笔记0x0101</span>
+                        <span class="hidden-mobile">由C语言实验报告引申的有趣极限题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -545,8 +909,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/07/10_25/" title="hicancan的科研周报10.25">
-                        <span class="hidden-mobile">hicancan的科研周报10.25</span>
+                      <a href="/2024/11/06/Is%20%E2%80%98Rizz%E2%80%99%20the%20Secret%20to%20Getting%20Ahead%20at%20Work%20(2)/" title="test">
+                        <span class="hidden-mobile">test</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -595,19 +959,6 @@
 
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
 
     </div>
   </div>
@@ -638,7 +989,6 @@
 
   
   
-
 
 
 
@@ -742,7 +1092,7 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -775,33 +1125,6 @@
 
 
 
-
-
-  
-<script>
-  var relativeDate = function() {
-    var updatedTime = document.getElementById('updated-time');
-    if (updatedTime) {
-      var text = updatedTime.textContent;
-      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
-      var matchs = text.match(reg);
-      if (matchs) {
-        var relativeTime = moment(matchs[0]).fromNow();
-        updatedTime.textContent = text.replace(reg, relativeTime);
-      }
-      updatedTime.style.display = '';
-    }
-  };
-  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
-    if (!'zh-cn'.startsWith('en')) {
-      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
-        relativeDate();
-      });
-    } else {
-      relativeDate();
-    }
-  });
-</script>
 
 
   
@@ -840,6 +1163,33 @@
         }
       }
     });
+  });
+</script>
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
   });
 </script>
 
@@ -896,49 +1246,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

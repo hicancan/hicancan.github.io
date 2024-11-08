@@ -19,12 +19,12 @@
   <meta name="author" content="hicancan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to hicancan personal blog, nice to meet you!建立这个博客的缘由十分有趣在2024年11月5日，我突然想起来我的英语课前分享还没有做，然后结合前些阵子学习markdown写题解也想分享分享，突然想到，我为什么不写一个博客来呈现一下我的分享呢？于是我就开始搭建这个博客，并在2024年11月6日完成了这个博客的初步搭建。 搭建的过程还是比较艰难">
+    <meta name="description" content="Welcome to hicancan personal blog, nice to meet you! 建立这个博客的缘由十分有趣 在2024年11月5日，我突然想起来我的英语课前分享还没有做，然后结合前些阵子学习markdown写题解也想分享分享，突然想到，我为什么不写一个博客来呈现一下我的分享呢？于是我就开始搭建这个博客，并在2024年11月6日完成了这个博客的初步搭建。 搭建的过程还是比较">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Welcome my friends！">
 <meta property="og:url" content="http://example.com/2024/11/06/Welcome/index.html">
 <meta property="og:site_name" content="hicancan">
-<meta property="og:description" content="Welcome to hicancan personal blog, nice to meet you!建立这个博客的缘由十分有趣在2024年11月5日，我突然想起来我的英语课前分享还没有做，然后结合前些阵子学习markdown写题解也想分享分享，突然想到，我为什么不写一个博客来呈现一下我的分享呢？于是我就开始搭建这个博客，并在2024年11月6日完成了这个博客的初步搭建。 搭建的过程还是比较艰难">
+<meta property="og:description" content="Welcome to hicancan personal blog, nice to meet you! 建立这个博客的缘由十分有趣 在2024年11月5日，我突然想起来我的英语课前分享还没有做，然后结合前些阵子学习markdown写题解也想分享分享，突然想到，我为什么不写一个博客来呈现一下我的分享呢？于是我就开始搭建这个博客，并在2024年11月6日完成了这个博客的初步搭建。 搭建的过程还是比较">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/hicancan/piclist/202411062345352.jpg">
 <meta property="article:published_time" content="2024-11-06T12:06:33.000Z">
@@ -47,6 +47,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -74,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"always","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":false,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"pZf42bxkbHj9AXOwffZPOCHY-gzGzoHsz","app_key":"LhMpQZRUjN1uAShUVK1U7OHc","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -181,7 +183,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                <span>联系我</span>
+                <span>关于</span>
               </a>
             </li>
           
@@ -288,6 +290,19 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
 
@@ -310,9 +325,13 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Welcome-to-hicancan-personal-blog-nice-to-meet-you"><a href="#Welcome-to-hicancan-personal-blog-nice-to-meet-you" class="headerlink" title="Welcome to hicancan personal blog, nice to meet you!"></a>Welcome to hicancan personal blog, nice to meet you!</h1><h2 id="建立这个博客的缘由十分有趣"><a href="#建立这个博客的缘由十分有趣" class="headerlink" title="建立这个博客的缘由十分有趣"></a>建立这个博客的缘由十分有趣</h2><p>在2024年11月5日，我突然想起来我的英语课前分享还没有做，然后结合前些阵子学习markdown写题解也想分享分享，突然想到，我为什么不写一个博客来呈现一下我的分享呢？于是我就开始搭建这个博客，并在2024年11月6日完成了这个博客的初步搭建。</p>
-<h2 id="搭建的过程还是比较艰难的"><a href="#搭建的过程还是比较艰难的" class="headerlink" title="搭建的过程还是比较艰难的"></a>搭建的过程还是比较艰难的</h2><p>因为不想花钱想白嫖，所以就选择了github+hexo的方案，但是搭建的过程中遇到了很多问题，比如github的访问问题，hexo的配置问题，主题的配置问题等等，但是经过一番努力，终于有了个人博客的雏形。</p>
-<h2 id="我希望我的博客能够帮助到更多的人"><a href="#我希望我的博客能够帮助到更多的人" class="headerlink" title="我希望我的博客能够帮助到更多的人"></a>我希望我的博客能够帮助到更多的人</h2><p>我希望我的博客能够帮助到更多的人，探讨学习经验和心得，让更多的人能够从中受益。同时，我也希望能够通过我的博客，结识更多的朋友，一起交流学习，共同进步哟~</p>
+                <h1>Welcome to hicancan personal blog, nice to meet you!</h1>
+<h2 id="建立这个博客的缘由十分有趣">建立这个博客的缘由十分有趣</h2>
+<p>在2024年11月5日，我突然想起来我的英语课前分享还没有做，然后结合前些阵子学习markdown写题解也想分享分享，突然想到，我为什么不写一个博客来呈现一下我的分享呢？于是我就开始搭建这个博客，并在2024年11月6日完成了这个博客的初步搭建。</p>
+<h2 id="搭建的过程还是比较艰难的">搭建的过程还是比较艰难的</h2>
+<p>因为不想花钱想白嫖，所以就选择了github+hexo的方案，但是搭建的过程中遇到了很多问题，比如github的访问问题，hexo的配置问题，主题的配置问题等等，但是经过一番努力，终于有了个人博客的雏形。</p>
+<h2 id="我希望我的博客能够帮助到更多的人">我希望我的博客能够帮助到更多的人</h2>
+<p>我希望我的博客能够帮助到更多的人，探讨学习经验和心得，让更多的人能够从中受益。同时，我也希望能够通过我的博客，结识更多的朋友，一起交流学习，共同进步哟~</p>
 
                 
               </div>
@@ -387,9 +406,21 @@
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="ND - 禁止演绎">
+                    <i class="iconfont icon-cc-nd"></i>
                   </span>
                 </a>
               
@@ -408,9 +439,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/06/Is%20%E2%80%98Rizz%E2%80%99%20the%20Secret%20to%20Getting%20Ahead%20at%20Work/" title="Is ‘Rizz’ the Secret to Getting Ahead at Work?">
+                      <a href="/2024/11/06/ACM/" title="ACM小图标哈哈哈">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Is ‘Rizz’ the Secret to Getting Ahead at Work?</span>
+                        <span class="hidden-mobile">ACM小图标哈哈哈</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -462,19 +493,6 @@
 
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
 
     </div>
   </div>
@@ -505,7 +523,6 @@
 
   
   
-
 
 
 
@@ -609,7 +626,7 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -642,33 +659,6 @@
 
 
 
-
-
-  
-<script>
-  var relativeDate = function() {
-    var updatedTime = document.getElementById('updated-time');
-    if (updatedTime) {
-      var text = updatedTime.textContent;
-      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
-      var matchs = text.match(reg);
-      if (matchs) {
-        var relativeTime = moment(matchs[0]).fromNow();
-        updatedTime.textContent = text.replace(reg, relativeTime);
-      }
-      updatedTime.style.display = '';
-    }
-  };
-  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
-    if (!'zh-cn'.startsWith('en')) {
-      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
-        relativeDate();
-      });
-    } else {
-      relativeDate();
-    }
-  });
-</script>
 
 
   
@@ -707,6 +697,33 @@
         }
       }
     });
+  });
+</script>
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
   });
 </script>
 
@@ -763,49 +780,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
